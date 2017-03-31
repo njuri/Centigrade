@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import CoreLocation
 
 public final class APIClient{
   
@@ -15,6 +17,11 @@ public final class APIClient{
   private static let apiURL = baseURL.appendingPathComponent(apiKey)
   
   
+  
+  public static func requestForecast(for location : CLLocationCoordinate2D){
+    
+    
+  }
   
   
 }
