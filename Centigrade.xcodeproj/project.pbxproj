@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB2FF1F31E8FC35D008C2A5A /* WeatherDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FF1F21E8FC35D008C2A5A /* WeatherDisplayViewController.swift */; };
 		CBCAADFE1E8EB487008522B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCAADFD1E8EB487008522B0 /* AppDelegate.swift */; };
-		CBCAAE001E8EB487008522B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCAADFF1E8EB487008522B0 /* ViewController.swift */; };
 		CBCAAE031E8EB487008522B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCAAE011E8EB487008522B0 /* Main.storyboard */; };
 		CBCAAE061E8EB487008522B0 /* Centigrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBCAAE041E8EB487008522B0 /* Centigrade.xcdatamodeld */; };
 		CBCAAE081E8EB487008522B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCAAE071E8EB487008522B0 /* Assets.xcassets */; };
@@ -19,6 +19,7 @@
 		CBCAAE2D1E8EB7EF008522B0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCAAE2C1E8EB7EF008522B0 /* APIClient.swift */; };
 		CBCAAE481E8EBD4E008522B0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCAAE3B1E8EBD30008522B0 /* Alamofire.framework */; };
 		CBCAAE4A1E8EBD91008522B0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCAAE491E8EBD91008522B0 /* CoreDataStack.swift */; };
+		CBCAAE4D1E8EC5F3008522B0 /* WeatherDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCAAE4C1E8EC5F3008522B0 /* WeatherDataPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,9 +96,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB2FF1F21E8FC35D008C2A5A /* WeatherDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDisplayViewController.swift; sourceTree = "<group>"; };
 		CBCAADFA1E8EB487008522B0 /* Centigrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Centigrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCAADFD1E8EB487008522B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CBCAADFF1E8EB487008522B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CBCAAE021E8EB487008522B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBCAAE051E8EB487008522B0 /* Centigrade.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Centigrade.xcdatamodel; sourceTree = "<group>"; };
 		CBCAAE071E8EB487008522B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		CBCAAE2C1E8EB7EF008522B0 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CBCAAE2F1E8EBD30008522B0 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		CBCAAE491E8EBD91008522B0 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		CBCAAE4C1E8EC5F3008522B0 /* WeatherDataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				CBCAADFD1E8EB487008522B0 /* AppDelegate.swift */,
-				CBCAADFF1E8EB487008522B0 /* ViewController.swift */,
 				CBCAAE011E8EB487008522B0 /* Main.storyboard */,
 				CBCAAE071E8EB487008522B0 /* Assets.xcassets */,
 				CBCAAE091E8EB487008522B0 /* LaunchScreen.storyboard */,
@@ -186,6 +187,7 @@
 		CBCAAE141E8EB4C4008522B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB2FF1F21E8FC35D008C2A5A /* WeatherDisplayViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +205,7 @@
 		CBCAAE2A1E8EB7D4008522B0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CBCAAE4B1E8EC562008522B0 /* Models */,
 				CBCAAE2B1E8EB7D4008522B0 /* Networking */,
 			);
 			path = Sources;
@@ -229,6 +232,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		CBCAAE4B1E8EC562008522B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CBCAAE4C1E8EC5F3008522B0 /* WeatherDataPoint.swift */,
+			);
+			name = Models;
+			path = CentigradeKit/Models;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -406,9 +418,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBCAAE001E8EB487008522B0 /* ViewController.swift in Sources */,
 				CBCAAE061E8EB487008522B0 /* Centigrade.xcdatamodeld in Sources */,
 				CBCAADFE1E8EB487008522B0 /* AppDelegate.swift in Sources */,
+				CB2FF1F31E8FC35D008C2A5A /* WeatherDisplayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +430,7 @@
 			files = (
 				CBCAAE2D1E8EB7EF008522B0 /* APIClient.swift in Sources */,
 				CBCAAE4A1E8EBD91008522B0 /* CoreDataStack.swift in Sources */,
+				CBCAAE4D1E8EC5F3008522B0 /* WeatherDataPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +655,7 @@
 				CBCAAE111E8EB487008522B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBCAAE261E8EB7AD008522B0 /* Build configuration list for PBXNativeTarget "CentigradeKit" */ = {
 			isa = XCConfigurationList;
@@ -650,6 +664,7 @@
 				CBCAAE281E8EB7AD008522B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
