@@ -42,7 +42,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    CoreDataStack.stack.saveContext()
+   // CoreDataStack.stack.saveContext()
+  }
+  
+  static func openSettingsApp(){
+    let url = URL(string: UIApplicationOpenSettingsURLString)!
+    if UIApplication.shared.canOpenURL(url){
+      UIApplication.shared.open(url, options: [:])
+    }
   }
 }
 

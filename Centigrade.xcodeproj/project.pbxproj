@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CB2FF1F31E8FC35D008C2A5A /* WeatherDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FF1F21E8FC35D008C2A5A /* WeatherDisplayViewController.swift */; };
+		CB6501531E9018FB00F710ED /* CentigrateLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8104771E8FC52500CF5232 /* CentigrateLocationManager.swift */; };
+		CB8104821E8FFE9A00CF5232 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8104811E8FFE9A00CF5232 /* UserSettings.swift */; };
 		CBCAADFE1E8EB487008522B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCAADFD1E8EB487008522B0 /* AppDelegate.swift */; };
 		CBCAAE031E8EB487008522B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCAAE011E8EB487008522B0 /* Main.storyboard */; };
 		CBCAAE061E8EB487008522B0 /* Centigrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBCAAE041E8EB487008522B0 /* Centigrade.xcdatamodeld */; };
@@ -97,6 +99,8 @@
 
 /* Begin PBXFileReference section */
 		CB2FF1F21E8FC35D008C2A5A /* WeatherDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDisplayViewController.swift; sourceTree = "<group>"; };
+		CB8104771E8FC52500CF5232 /* CentigrateLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentigrateLocationManager.swift; sourceTree = "<group>"; };
+		CB8104811E8FFE9A00CF5232 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		CBCAADFA1E8EB487008522B0 /* Centigrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Centigrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCAADFD1E8EB487008522B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBCAAE021E8EB487008522B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +137,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB6501521E9018CC00F710ED /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				CB8104771E8FC52500CF5232 /* CentigrateLocationManager.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		CBCAADF11E8EB487008522B0 = {
 			isa = PBXGroup;
 			children = (
@@ -205,8 +217,10 @@
 		CBCAAE2A1E8EB7D4008522B0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CB6501521E9018CC00F710ED /* Factory */,
 				CBCAAE4B1E8EC562008522B0 /* Models */,
 				CBCAAE2B1E8EB7D4008522B0 /* Networking */,
+				CB8104811E8FFE9A00CF5232 /* UserSettings.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -239,7 +253,7 @@
 				CBCAAE4C1E8EC5F3008522B0 /* WeatherDataPoint.swift */,
 			);
 			name = Models;
-			path = CentigradeKit/Models;
+			path = CentigradeKit/Sources/Models;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -429,6 +443,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBCAAE2D1E8EB7EF008522B0 /* APIClient.swift in Sources */,
+				CB8104821E8FFE9A00CF5232 /* UserSettings.swift in Sources */,
+				CB6501531E9018FB00F710ED /* CentigrateLocationManager.swift in Sources */,
 				CBCAAE4A1E8EBD91008522B0 /* CoreDataStack.swift in Sources */,
 				CBCAAE4D1E8EC5F3008522B0 /* WeatherDataPoint.swift in Sources */,
 			);

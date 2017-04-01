@@ -22,19 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tartu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sR8-fF-eLJ">
-                                <rect key="frame" x="155.5" y="106" width="64" height="31.5"/>
+                                <rect key="frame" x="156" y="106" width="64" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-Gc-Byi">
-                                <rect key="frame" x="163.5" y="145.5" width="49" height="20.5"/>
+                                <rect key="frame" x="164" y="146" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 Cº" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9l-y1-aCq">
-                                <rect key="frame" x="113" y="174" width="150" height="72"/>
+                                <rect key="frame" x="113" y="175" width="150" height="72"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,6 +55,12 @@
                             <constraint firstItem="Pka-Gc-Byi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yyc-IH-pAi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="degreeLabel" destination="h9l-y1-aCq" id="F9e-uL-644"/>
+                        <outlet property="descriptionLabel" destination="Pka-Gc-Byi" id="k02-Lb-A8Q"/>
+                        <outlet property="loadingInidcator" destination="dgn-d0-Lnn" id="Mch-B7-GGW"/>
+                        <outlet property="placeLabel" destination="sR8-fF-eLJ" id="k2z-Pu-bmb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
