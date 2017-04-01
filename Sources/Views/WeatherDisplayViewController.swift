@@ -44,17 +44,30 @@ final class WeatherDisplayViewController: UIViewController {
   
   func sendWeatherRequest(with coordinate : CLLocationCoordinate2D){
     APIClient.requestForecast(for: coordinate) { (dataPoint, error) in
+      self.loadingInidcator.stopAnimating()
       guard error == nil else {
-        self.degreeLabel.text = "-"
-
+        self.updateLabels(with: nil)
         return
       }
-      guard let dataPoint = dataPoint else {
-        self.degreeLabel.text = "-"
-        return
-      }
-      
-      self.degreeLabel.text = dataPoint.displayTemperature
+      self.updateLabels(with: dataPoint)
+    }
+  }
+  
+  func updateLabels(with dataPoint : WeatherDataPoint?){
+    guard let dataPoint = dataPoint else{
+      degreeLabel.text = "-"
+      descriptionLabel.text = "-"
+      return
+    }
+    degreeLabel.text = dataPoint.displayTemperature
+    descriptionLabel.text = dataPoint.readableSummary
+  }
+  
+  func updatePlace(with name : String?){
+    if let name = name{
+      placeLabel.text = name
+    }else{
+      placeLabel.text = "–"
     }
   }
   
@@ -63,7 +76,7 @@ final class WeatherDisplayViewController: UIViewController {
 
 extension WeatherDisplayViewController : LocationManagerDelegate{
   func didFailToReceiveLocation() {
-    self.placeLabel.text = "-"
+    updatePlace(with: nil)
   }
   
   func didUpdateLocationAuthorizationStatus() {
@@ -77,12 +90,7 @@ extension WeatherDisplayViewController : LocationManagerDelegate{
   func didReceive(location: CLLocation) {
     sendWeatherRequest(with: location.coordinate)
     locationManager.placemarkLocality(from: location) { locality in
-      print("Recognized locality")
-      guard let locality = locality else {
-        self.placeLabel.text = "-"
-        return
-      }
-     self.placeLabel.text = locality
+      self.updatePlace(with: locality)
     }
   }
 }

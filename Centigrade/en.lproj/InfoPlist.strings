@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Centigrade
+
+  Created by Juri Noga on 01.04.17.
+  Copyright © 2017 Juri Noga. All rights reserved.
+*/
+
+"NSLocationWhenInUseUsageDescription" = "Centigrate will use your location to provide local weather information.";

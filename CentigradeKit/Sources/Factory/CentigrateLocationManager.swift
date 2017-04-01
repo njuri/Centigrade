@@ -43,8 +43,12 @@ public final class CentigradeLocationManager : NSObject {
     }
   }
   
-  public func requestPermission(){
+  public override init() {
+    super.init()
     clLocationManger.delegate = self
+  }
+  
+  public func requestPermission(){
     clLocationManger.requestWhenInUseAuthorization()
   }
   
