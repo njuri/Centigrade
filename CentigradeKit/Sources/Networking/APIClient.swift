@@ -22,7 +22,7 @@ public final class APIClient{
   
   public static func requestForecast(for location : CLLocationCoordinate2D, language : String = "en", completion : @escaping (_ dataPoint : WeatherDataPoint?,_ error : ErrorType?)->()){
     let url = requestURL(from: location)
-    let parameters : Parameters = ["lang" : "[\(language)]", "exclude" : "[alerts]"]
+    let parameters : Parameters = ["lang" : [language], "exclude" : ["alerts"]]
     
     Alamofire.request(url, method: .get, parameters: parameters).responseJSON { response in
       

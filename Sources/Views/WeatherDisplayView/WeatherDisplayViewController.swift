@@ -42,6 +42,13 @@ final class WeatherDisplayViewController: UIViewController {
     
   }
   
+  
+  @IBAction func settingsPressed(_ sender: Any) {
+    let vc = SettingsViewController(nibName: "SettingsViewController", bundle: nil)
+    let nc = UINavigationController(rootViewController: vc)
+    present(nc, animated: true)
+  }
+  
   func sendWeatherRequest(with coordinate : CLLocationCoordinate2D){
     APIClient.requestForecast(for: coordinate) { (dataPoint, error) in
       self.loadingInidcator.stopAnimating()
