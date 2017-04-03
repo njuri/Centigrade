@@ -27,7 +27,7 @@ public struct UserSettings{
   
   public static func localizedString(from temperature : Measurement<UnitTemperature>)->String{
     let converted = temperature.converted(to: currentTemperatureUnit)
-    return String(Int(converted.value.rounded(.toNearestOrEven)))+" º"
+    return String(Int(converted.value.rounded(.toNearestOrEven)))+"º"
   }
   
   

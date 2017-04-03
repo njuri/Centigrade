@@ -25,10 +25,27 @@ final class SettingsViewController: UIViewController {
     // Do any additional setup after loading the view.
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePressed))
     setupSegmentedControl()
+    setupAutomaticCell()
   }
   
   func donePressed(){
     dismiss(animated: true)
+  }
+  
+  func setupAutomaticCell(){
+    let labelAlpha : CGFloat
+    let isAutomatic : Bool
+    if let _ = UserSettings.customTemperatureUnit{
+      labelAlpha = 0.3
+      isAutomatic = false
+    }else{
+      labelAlpha = 1
+      isAutomatic = true
+    }
+    automaticSwitch.setOn(isAutomatic, animated: true)
+    UIView.animate(withDuration: 0.3, animations: {
+      self.automaticLabel.alpha = labelAlpha
+    })
   }
   
   func setupSegmentedControl(){
@@ -43,8 +60,8 @@ final class SettingsViewController: UIViewController {
   @IBAction func segmentDidChange(_ sender: Any) {
     switch unitSegment.selectedSegmentIndex{
     case 0: UserSettings.customTemperatureUnit = .celsius
-    case 1: UserSettings.customTemperatureUnit = .celsius
-    case 2: UserSettings.customTemperatureUnit = .celsius
+    case 1: UserSettings.customTemperatureUnit = .fahrenheit
+    case 2: UserSettings.customTemperatureUnit = .kelvin
     default: print("")
     }
   }
@@ -55,16 +72,11 @@ final class SettingsViewController: UIViewController {
     if automaticSwitch.isOn{
       UserSettings.customTemperatureUnit = nil
       settingsTableView.deleteRows(at: [IndexPath(row: 1, section:0)], with: .automatic)
-      UIView.animate(withDuration: 0.3, animations: {
-        self.automaticLabel.alpha = 1
-      })
     }else{
       UserSettings.customTemperatureUnit = UserSettings.defaultTemperatureUnit
       settingsTableView.insertRows(at: [IndexPath(row: 1, section:0)], with: .automatic)
-      UIView.animate(withDuration: 0.3, animations: { 
-        self.automaticLabel.alpha = 0.3
-      })
     }
+    setupAutomaticCell()
 
   }
   
