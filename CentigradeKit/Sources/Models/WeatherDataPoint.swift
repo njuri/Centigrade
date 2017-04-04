@@ -9,14 +9,6 @@
 import Foundation
 import CoreLocation
 
-public enum WeatherSummary : String{
-  case clearDay = "clear-day"
-  case clearNight = "clear-night"
-  case partlyCloudyDay = "partly-cloudy-day"
-  case partlyCloudyNight = "partly-cloudy-night"
-  case rain,snow,sleet,wind,fog,cloudy
-}
-
 public struct WeatherDataPoint{
   public let apparentTemperature : Measurement<UnitTemperature>
   public let temperature : Measurement<UnitTemperature>
