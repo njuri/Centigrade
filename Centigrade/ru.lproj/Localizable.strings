@@ -1,0 +1,11 @@
+/* 
+  Localized.strings
+  Centigrade
+
+  Created by Juri Noga on 06.04.17.
+  Copyright © 2017 Juri Noga. All rights reserved.
+*/
+
+"DONE_BUTTON" = "Сохранить";
+"EDIT_PROFILE_BUTTON" = "Редактировать Профиль";
+"YOUR_NAME_LABEL" = "Ваше Имя";

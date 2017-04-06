@@ -1,0 +1,18 @@
+/* 
+  Localized.strings
+  Centigrade
+
+  Created by Juri Noga on 06.04.17.
+  Copyright © 2017 Juri Noga. All rights reserved.
+*/
+
+"DONE_BUTTON" = "Done";
+"EDIT_PROFILE_BUTTON" = "Edit Profile";
+"YOUR_NAME_LABEL" = "Your Name";
+"PICTURE_QUESTION_LABEL" = "How do you want to add your profile picture?";
+"PROFILE_IMAGE_LABEL" = "Profile picture";
+"FROM_LIBRARY_LABEL" = "Choose from library";
+"CANCEL_LABEL" = "Cancel";
+"TAKE_CAMERA_LABEL" = "Take using camera";
+"CAMERA_NOT_AVAILABLE" = "";
+"PHOTO_LIBRARY_NOT_AVAILABLE" = "";

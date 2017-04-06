@@ -10,6 +10,7 @@
 		CB0EFA1A1E963A1900A11F8A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA181E963A1900A11F8A /* ProfileViewController.swift */; };
 		CB0EFA1B1E963A1900A11F8A /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0EFA191E963A1900A11F8A /* ProfileViewController.xib */; };
 		CB0EFA1D1E963A2800A11F8A /* CardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA1C1E963A2800A11F8A /* CardStackViewController.swift */; };
+		CB0EFA221E96827200A11F8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB0EFA241E96827200A11F8A /* Localizable.strings */; };
 		CB3EC8071E92525D004E2C11 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EC8061E92525D004E2C11 /* Reachability.swift */; };
 		CB3EC8111E92A987004E2C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3EC8101E92A987004E2C11 /* Assets.xcassets */; };
 		CB3EC8131E92AA0C004E2C11 /* WeatherSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EC8121E92AA0C004E2C11 /* WeatherSummary.swift */; };
@@ -106,6 +107,8 @@
 		CB0EFA181E963A1900A11F8A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CB0EFA191E963A1900A11F8A /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		CB0EFA1C1E963A2800A11F8A /* CardStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStackViewController.swift; sourceTree = "<group>"; };
+		CB0EFA231E96827200A11F8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB0EFA251E96827800A11F8A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB3EC8061E92525D004E2C11 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CB3EC8101E92A987004E2C11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3EC8121E92AA0C004E2C11 /* WeatherSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSummary.swift; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 				CBCAAE091E8EB487008522B0 /* LaunchScreen.storyboard */,
 				CBCAAE0C1E8EB487008522B0 /* Info.plist */,
 				CB6501591E9021A800F710ED /* InfoPlist.strings */,
+				CB0EFA241E96827200A11F8A /* Localizable.strings */,
 			);
 			path = Centigrade;
 			sourceTree = "<group>";
@@ -462,6 +466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0EFA221E96827200A11F8A /* Localizable.strings in Resources */,
 				CB0EFA1B1E963A1900A11F8A /* ProfileViewController.xib in Resources */,
 				CBCAAE0B1E8EB487008522B0 /* LaunchScreen.storyboard in Resources */,
 				CB6501571E9021A800F710ED /* InfoPlist.strings in Resources */,
@@ -516,6 +521,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		CB0EFA241E96827200A11F8A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB0EFA231E96827200A11F8A /* en */,
+				CB0EFA251E96827800A11F8A /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		CB6501591E9021A800F710ED /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
