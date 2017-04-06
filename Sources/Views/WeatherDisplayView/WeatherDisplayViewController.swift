@@ -13,11 +13,13 @@ import CentigradeKit
 final class WeatherDisplayViewController: UIViewController {
 
   @IBOutlet weak var degreeLabel: UILabel!
-  @IBOutlet weak var descriptionLabel: UILabel!
-  @IBOutlet weak var placeLabel: UILabel!
-  @IBOutlet weak var loadingInidcator: UIActivityIndicatorView!
+//  @IBOutlet weak var descriptionLabel: UILabel!
+//  @IBOutlet weak var placeLabel: UILabel!
+//  @IBOutlet weak var loadingInidcator: UIActivityIndicatorView!
   
   let locationManager = CentigradeLocationManager()
+  let cardStackController = CardStackController()
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,26 +34,28 @@ final class WeatherDisplayViewController: UIViewController {
   
   func loadCurrentWeather(){
     
-    loadingInidcator.startAnimating()
-
-    if locationManager.isAuthorized{
-      locationManager.requestCurrentLocation()
-    }else{
-      locationManager.requestPermission()
-    }
-    
+//    loadingInidcator.startAnimating()
+//
+//    if locationManager.isAuthorized{
+//      locationManager.requestCurrentLocation()
+//    }else{
+//      locationManager.requestPermission()
+//    }
+//    
   }
   
-  
-  @IBAction func settingsPressed(_ sender: Any) {
-    let vc = SettingsViewController(nibName: "SettingsViewController", bundle: nil)
-    let nc = UINavigationController(rootViewController: vc)
-    present(nc, animated: true)
+  @IBAction func profilePressed(_ sender: Any) {
+    cardStackController.delegate = self
+    present(cardStackController, animated: false, completion: nil)
+    let profileCardController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+    profileCardController.delegate = self
+    UIApplication.shared.statusBarStyle = .lightContent
+    cardStackController.stack(viewController: profileCardController)
   }
   
   func sendWeatherRequest(with coordinate : CLLocationCoordinate2D){
     APIClient.requestForecast(for: coordinate) { (dataPoint, error) in
-      self.loadingInidcator.stopAnimating()
+     // self.loadingInidcator.stopAnimating()
       guard error == nil else {
         self.updateLabels(with: nil)
         return
@@ -63,19 +67,19 @@ final class WeatherDisplayViewController: UIViewController {
   func updateLabels(with dataPoint : WeatherDataPoint?){
     guard let dataPoint = dataPoint else{
       degreeLabel.text = "-"
-      descriptionLabel.text = "-"
+   //   descriptionLabel.text = "-"
       return
     }
     degreeLabel.text = dataPoint.displayTemperature
-    descriptionLabel.text = dataPoint.readableSummary
+   // descriptionLabel.text = dataPoint.readableSummary
   }
   
   func updatePlace(with name : String?){
-    if let name = name{
-      placeLabel.text = name
-    }else{
-      placeLabel.text = "–"
-    }
+//    if let name = name{
+//      placeLabel.text = name
+//    }else{
+//      placeLabel.text = "–"
+//    }
   }
   
   
@@ -99,5 +103,15 @@ extension WeatherDisplayViewController : LocationManagerDelegate{
     locationManager.placemarkLocality(from: location) { locality in
       self.updatePlace(with: locality)
     }
+  }
+}
+
+extension WeatherDisplayViewController : CardStackControllerDelegate, ProfileCardControllerDelegate{
+  func didFinishDismissingCardController() {
+    UIApplication.shared.statusBarStyle = .default
+  }
+  
+  func dismissPressed() {
+    cardStackController.unstackLastViewController()
   }
 }

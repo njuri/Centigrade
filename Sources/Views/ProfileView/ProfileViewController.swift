@@ -1,35 +1,50 @@
 //
-//  SettingsViewController.swift
+//  ProfileViewController.swift
 //  Centigrade
 //
-//  Created by Juri Noga on 02.04.17.
+//  Created by Juri Noga on 06.04.17.
 //  Copyright © 2017 Juri Noga. All rights reserved.
 //
 
 import UIKit
 import CentigradeKit
 
-final class SettingsViewController: UIViewController {
+protocol ProfileCardControllerDelegate: class{
+  func dismissPressed()
+}
+
+final class ProfileViewController : UIViewController {
   
+  @IBOutlet weak var profileImageView: UIImageView!
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var profileTableView: UITableView!
   
-  @IBOutlet weak var settingsTableView: UITableView!
   @IBOutlet var automaticCell: UITableViewCell!
   @IBOutlet var unitCell: UITableViewCell!
   @IBOutlet weak var automaticSwitch: UISwitch!
   @IBOutlet weak var automaticLabel: UILabel!
   @IBOutlet weak var unitSegment: UISegmentedControl!
+  @IBOutlet weak var unitsLabel: UILabel!
+  
+  @IBOutlet weak var chevronIcon: UIImageView!
+  @IBOutlet weak var chevronButton: UIButton!
+  @IBOutlet weak var editProfileButton: UIButton!
+  
+  weak var delegate : ProfileCardControllerDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Settings"
     // Do any additional setup after loading the view.
-    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePressed))
     setupSegmentedControl()
     setupAutomaticCell()
   }
   
-  func donePressed(){
-    dismiss(animated: true)
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+  }
+  
+  @IBAction func editProfilePressed(_ sender: Any) {
   }
   
   func setupAutomaticCell(){
@@ -66,23 +81,25 @@ final class SettingsViewController: UIViewController {
     }
   }
   
-  
   @IBAction func automaticDidSwitch(_ sender: Any) {
     
     if automaticSwitch.isOn{
       UserSettings.customTemperatureUnit = nil
-      settingsTableView.deleteRows(at: [IndexPath(row: 1, section:0)], with: .automatic)
+      profileTableView.deleteRows(at: [IndexPath(row: 1, section:0)], with: .automatic)
     }else{
       UserSettings.customTemperatureUnit = UserSettings.defaultTemperatureUnit
-      settingsTableView.insertRows(at: [IndexPath(row: 1, section:0)], with: .automatic)
+      profileTableView.insertRows(at: [IndexPath(row: 1, section:0)], with: .automatic)
     }
     setupAutomaticCell()
+  }
 
+  @IBAction func chevronPressed(_ sender: Any) {
+    delegate?.dismissPressed()
   }
   
 }
 
-extension SettingsViewController : UITableViewDataSource{
+extension ProfileViewController : UITableViewDataSource{
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
@@ -104,7 +121,7 @@ extension SettingsViewController : UITableViewDataSource{
   }
 }
 
-extension SettingsViewController : UITableViewDelegate{
+extension ProfileViewController : UITableViewDelegate{
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     automaticSwitch.setOn(!automaticSwitch.isOn, animated: true)
