@@ -35,6 +35,7 @@ final class ProfileViewController : UIViewController {
   weak var delegate : ProfileCardControllerDelegate?
   
   var isEditingProfile = false
+  var user : UserObject = CoreDataFactory.user
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -45,6 +46,15 @@ final class ProfileViewController : UIViewController {
     profilePlaceholderImageView.image = profilePlaceholderImageView.image?.withRenderingMode(.alwaysTemplate)
     profilePlaceholderImageView.tintColor = .gray
     nameField.placeholder = NSLocalizedString("YOUR_NAME_LABEL", comment: "Your Name")
+    nameField.text = user.name
+    guard let imageData = user.imageData else { return }
+    profilePlaceholderImageView.image = nil
+    DispatchQueue.global(qos: .userInitiated).async {
+      let image = UIImage(data: imageData as Data)
+      DispatchQueue.main.async {
+        self.profileImageView.image = image
+      }
+    }
   }
   
   override func viewDidLayoutSubviews() {
@@ -77,6 +87,7 @@ final class ProfileViewController : UIViewController {
       imageAlpha = 1
       editProfileButton.setTitle(NSLocalizedString("EDIT_PROFILE_BUTTON", comment: "Edit Profile"), for: .normal)
       nameField.resignFirstResponder()
+      user.name = nameField.text
     }
     
     UIView.animate(withDuration: 0.3, animations: {
@@ -162,8 +173,6 @@ final class ProfileViewController : UIViewController {
     delegate?.dismissPressed()
   }
   
-  
-  
   func createImagePicker(with type : UIImagePickerControllerSourceType){
     guard UIImagePickerController.isSourceTypeAvailable(type) else { return }
     let ivc = UIImagePickerController()
@@ -176,6 +185,7 @@ final class ProfileViewController : UIViewController {
   func processSelectedImage(image : UIImage){
     profilePlaceholderImageView.isHidden = true
     profileImageView.image = image
+    user.imageData = UIImageJPEGRepresentation(image, 0.5) as NSData?
   }
   
 }
@@ -228,5 +238,13 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
     }
     
     dismiss(animated: true, completion: nil)
+  }
+}
+
+extension ProfileViewController : UITextFieldDelegate{
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    nameField.resignFirstResponder()
+    user.name = nameField.text
+    return true
   }
 }

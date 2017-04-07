@@ -17,10 +17,6 @@ public struct WeatherDataPoint{
   public let location : CLLocationCoordinate2D
   public let date : Date
   
-  public var displayTemperature : String{
-    return UserSettings.localizedString(from: temperature)
-  }
-  
   public init?(from weatherDictionary : [String : AnyObject], location : CLLocationCoordinate2D){
     guard let apparentTemperature = weatherDictionary["apparentTemperature"] as? Double else { return nil }
     guard let temperature = weatherDictionary["temperature"] as? Double else { return nil }

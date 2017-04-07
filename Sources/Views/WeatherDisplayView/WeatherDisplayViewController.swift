@@ -11,11 +11,14 @@ import CoreLocation
 import CentigradeKit
 
 final class WeatherDisplayViewController: UIViewController {
-
+  
+  @IBOutlet weak var userProfileImageView: UIImageView!
   @IBOutlet weak var degreeLabel: UILabel!
-//  @IBOutlet weak var descriptionLabel: UILabel!
-//  @IBOutlet weak var placeLabel: UILabel!
-//  @IBOutlet weak var loadingInidcator: UIActivityIndicatorView!
+  @IBOutlet weak var placeLabel: UILabel!
+  @IBOutlet weak var locationBackgroundView: UIView!
+  @IBOutlet weak var locationIcon: UIImageView!
+  @IBOutlet weak var currentWeatherIcon: UIImageView!
+  @IBOutlet weak var currentWeatherSummary: UILabel!
   
   let locationManager = CentigradeLocationManager()
   let cardStackController = CardStackController()
@@ -25,11 +28,33 @@ final class WeatherDisplayViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     locationManager.delegate = self
+    setupLocationView()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    updateUserProfile()
     loadCurrentWeather()
+  }
+  
+  func setupLocationView(){
+    locationBackgroundView.layer.cornerRadius = 5
+    locationIcon.image = locationIcon.image?.withRenderingMode(.alwaysTemplate)
+    locationIcon.tintColor = placeLabel.textColor
+  }
+  
+  func updateUserProfile(){
+    guard let imageData = CoreDataFactory.user.imageData else {
+      userProfileImageView.image = #imageLiteral(resourceName: "user")
+      return
+    }
+    DispatchQueue.global(qos: .userInitiated).async {
+      let image = UIImage(data: imageData as Data)
+      DispatchQueue.main.async {
+        self.userProfileImageView.image = image
+      }
+    }
+
   }
   
   func loadCurrentWeather(){
@@ -42,6 +67,12 @@ final class WeatherDisplayViewController: UIViewController {
 //      locationManager.requestPermission()
 //    }
 //    
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    userProfileImageView.layer.cornerRadius = userProfileImageView.frame.height/2
+    userProfileImageView.layer.borderWidth = 1
   }
   
   @IBAction func profilePressed(_ sender: Any) {
@@ -109,6 +140,8 @@ extension WeatherDisplayViewController : LocationManagerDelegate{
 extension WeatherDisplayViewController : CardStackControllerDelegate, ProfileCardControllerDelegate{
   func didFinishDismissingCardController() {
     UIApplication.shared.statusBarStyle = .default
+    // Save profile
+    CoreDataFactory.save()
   }
   
   func dismissPressed() {

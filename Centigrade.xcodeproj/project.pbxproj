@@ -11,13 +11,16 @@
 		CB0EFA1B1E963A1900A11F8A /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0EFA191E963A1900A11F8A /* ProfileViewController.xib */; };
 		CB0EFA1D1E963A2800A11F8A /* CardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA1C1E963A2800A11F8A /* CardStackViewController.swift */; };
 		CB0EFA221E96827200A11F8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB0EFA241E96827200A11F8A /* Localizable.strings */; };
+		CB0EFA271E96A09A00A11F8A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA261E96A09A00A11F8A /* CoreDataStack.swift */; };
+		CB0EFA2A1E96A0B400A11F8A /* Centigrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA281E96A0B400A11F8A /* Centigrade.xcdatamodeld */; };
+		CB0EFA2C1E96A1AE00A11F8A /* CoreDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA2B1E96A1AE00A11F8A /* CoreDataFactory.swift */; };
 		CB3EC8071E92525D004E2C11 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EC8061E92525D004E2C11 /* Reachability.swift */; };
 		CB3EC8111E92A987004E2C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3EC8101E92A987004E2C11 /* Assets.xcassets */; };
 		CB3EC8131E92AA0C004E2C11 /* WeatherSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EC8121E92AA0C004E2C11 /* WeatherSummary.swift */; };
 		CB6501531E9018FB00F710ED /* CentigrateLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8104771E8FC52500CF5232 /* CentigrateLocationManager.swift */; };
 		CB6501571E9021A800F710ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB6501591E9021A800F710ED /* InfoPlist.strings */; };
-		CB8104821E8FFE9A00CF5232 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8104811E8FFE9A00CF5232 /* UserSettings.swift */; };
 		CBA8AA691E90F1BF0097B93D /* WeatherDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA8AA681E90F1BF0097B93D /* WeatherDisplayViewController.swift */; };
+		CBB093911E97A2F100C4CEE8 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8104811E8FFE9A00CF5232 /* UserSettings.swift */; };
 		CBCAADFE1E8EB487008522B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCAADFD1E8EB487008522B0 /* AppDelegate.swift */; };
 		CBCAAE031E8EB487008522B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCAAE011E8EB487008522B0 /* Main.storyboard */; };
 		CBCAAE081E8EB487008522B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCAAE071E8EB487008522B0 /* Assets.xcassets */; };
@@ -109,6 +112,9 @@
 		CB0EFA1C1E963A2800A11F8A /* CardStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStackViewController.swift; sourceTree = "<group>"; };
 		CB0EFA231E96827200A11F8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB0EFA251E96827800A11F8A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB0EFA261E96A09A00A11F8A /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		CB0EFA291E96A0B400A11F8A /* Centigrade.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Centigrade.xcdatamodel; sourceTree = "<group>"; };
+		CB0EFA2B1E96A1AE00A11F8A /* CoreDataFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataFactory.swift; sourceTree = "<group>"; };
 		CB3EC8061E92525D004E2C11 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CB3EC8101E92A987004E2C11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3EC8121E92AA0C004E2C11 /* WeatherSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSummary.swift; sourceTree = "<group>"; };
@@ -219,6 +225,7 @@
 		CBCAADFC1E8EB487008522B0 /* Centigrade */ = {
 			isa = PBXGroup;
 			children = (
+				CB0EFA281E96A0B400A11F8A /* Centigrade.xcdatamodeld */,
 				CBCAADFD1E8EB487008522B0 /* AppDelegate.swift */,
 				CBCAAE011E8EB487008522B0 /* Main.storyboard */,
 				CBCAAE071E8EB487008522B0 /* Assets.xcassets */,
@@ -243,6 +250,9 @@
 		CBCAAE131E8EB4C4008522B0 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				CB8104811E8FFE9A00CF5232 /* UserSettings.swift */,
+				CB0EFA261E96A09A00A11F8A /* CoreDataStack.swift */,
+				CB0EFA2B1E96A1AE00A11F8A /* CoreDataFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -273,7 +283,6 @@
 				CB6501521E9018CC00F710ED /* Factory */,
 				CBCAAE4B1E8EC562008522B0 /* Models */,
 				CBCAAE2B1E8EB7D4008522B0 /* Networking */,
-				CB8104811E8FFE9A00CF5232 /* UserSettings.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -490,8 +499,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0EFA2C1E96A1AE00A11F8A /* CoreDataFactory.swift in Sources */,
+				CB0EFA271E96A09A00A11F8A /* CoreDataStack.swift in Sources */,
+				CB0EFA2A1E96A0B400A11F8A /* Centigrade.xcdatamodeld in Sources */,
 				CB0EFA1D1E963A2800A11F8A /* CardStackViewController.swift in Sources */,
 				CBCAADFE1E8EB487008522B0 /* AppDelegate.swift in Sources */,
+				CBB093911E97A2F100C4CEE8 /* UserSettings.swift in Sources */,
 				CBA8AA691E90F1BF0097B93D /* WeatherDisplayViewController.swift in Sources */,
 				CB0EFA1A1E963A1900A11F8A /* ProfileViewController.swift in Sources */,
 			);
@@ -503,7 +516,6 @@
 			files = (
 				CBCAAE2D1E8EB7EF008522B0 /* APIClient.swift in Sources */,
 				CB3EC8131E92AA0C004E2C11 /* WeatherSummary.swift in Sources */,
-				CB8104821E8FFE9A00CF5232 /* UserSettings.swift in Sources */,
 				CB3EC8071E92525D004E2C11 /* Reachability.swift in Sources */,
 				CB6501531E9018FB00F710ED /* CentigrateLocationManager.swift in Sources */,
 				CBCAAE4D1E8EC5F3008522B0 /* WeatherDataPoint.swift in Sources */,
@@ -768,6 +780,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CB0EFA281E96A0B400A11F8A /* Centigrade.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB0EFA291E96A0B400A11F8A /* Centigrade.xcdatamodel */,
+			);
+			currentVersion = CB0EFA291E96A0B400A11F8A /* Centigrade.xcdatamodel */;
+			path = Centigrade.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CBCAADF21E8EB487008522B0 /* Project object */;
 }
