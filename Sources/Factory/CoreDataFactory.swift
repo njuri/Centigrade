@@ -60,8 +60,6 @@ struct CoreDataFactory{
 }
 
 extension WeatherDataArchiveObject{
-//  var dataPoint : WeatherDataPoint{
-//  }
   
   var measurementUnit : UnitTemperature{
     guard let symbolString = unitSymbol else { return .fahrenheit }
@@ -72,6 +70,12 @@ extension WeatherDataArchiveObject{
     default: return .fahrenheit
     }
   }
+  
+//  var dataPoint : WeatherDataPoint?{
+//    guard let summaryString = summary, let summary = WeatherSummary(rawValue: summaryString), let date = date else { return nil }
+//    let d = WeatherDataPoint(apparentTemperatureValue: apparentTemperature, temperatureValue: temperature, summary: summary, latitude: latitude, longitude: longitude, date: date as Date, readableSummary: readableSummary, unit: measurementUnit)
+//    return d
+//  }
 }
 
 extension NSObject{

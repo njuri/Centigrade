@@ -13,7 +13,7 @@ import CentigradeKit
 final class WeatherDisplayViewController: UIViewController {
   
   @IBOutlet weak var userProfileImageView: UIImageView!
-  @IBOutlet weak var degreeLabel: UILabel!
+  @IBOutlet weak var degreeLabel: TemperatureDisplayLabel!
   @IBOutlet weak var placeLabel: UILabel!
   @IBOutlet weak var locationBackgroundView: UIView!
   @IBOutlet weak var locationIcon: UIImageView!
@@ -59,6 +59,8 @@ final class WeatherDisplayViewController: UIViewController {
   }
   
   func loadCurrentWeather(){
+    guard UserSettings.canUpdateWeather else { return }
+    print("Starting weather update")
     loadingIndicator.startAnimating()
 
     if locationManager.isAuthorized{
@@ -84,12 +86,13 @@ final class WeatherDisplayViewController: UIViewController {
   }
   
   func sendWeatherRequest(with coordinate : CLLocationCoordinate2D){
-    APIClient.requestForecast(for: coordinate) { (dataPoint, error) in
+    APIClient.requestCurrentForecast(for: coordinate) { (dataPoint, error) in
      self.loadingIndicator.stopAnimating()
       guard error == nil else {
         self.updateLabels(with: nil)
         return
       }
+      UserSettings.didUpdateWeather()
       self.updateLabels(with: dataPoint)
     }
   }
@@ -100,18 +103,20 @@ final class WeatherDisplayViewController: UIViewController {
       currentWeatherSummaryLabel.text = "-"
       return
     }
-    degreeLabel.text = dataPoint.displayTemperature
+    degreeLabel.set(to: dataPoint.temperature)
     currentWeatherSummaryLabel.text = dataPoint.readableSummary
     currentWeatherIcon.image = dataPoint.summary.icon
   }
   
   func updatePlace(with name : String?){
-//    if let name = name{
-//      placeLabel.text = name
-//    }else{
-//      placeLabel.text = "–"
-//    }
+    if let name = name{
+      placeLabel.text = name
+    }else{
+      placeLabel.text = "–"
+    }
+    placeLabel.sizeToFit()
   }
+  
   
   
 }

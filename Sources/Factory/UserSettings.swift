@@ -11,11 +11,19 @@ import CentigradeKit
 
 enum UserDefaultsKey : String{
   case temperatureUnit
+  case lastWeatherUpdate
 }
 
 struct UserSettings{
 
+  /// Update weather not more frequently than 5 minutes
+  static let weatherUpdateInterval : TimeInterval = 5 * 60
   static let measurementFormatter = MeasurementFormatter()
+  static let weekdayDateFormatter : DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "eeee"
+    return formatter
+  }()
   
   static var customTemperatureUnit : UnitTemperature?{
     get{
@@ -29,6 +37,15 @@ struct UserSettings{
     }set{
       UserDefaults.standard.set(newValue?.symbol, forKey: UserDefaultsKey.temperatureUnit.rawValue)
     }
+  }
+  
+  static func didUpdateWeather(){
+    lastWeatherUpdate = Date()
+  }
+  
+  static var canUpdateWeather : Bool{
+    guard let lastWeatherUpdate = lastWeatherUpdate else { return true }
+    return Date().timeIntervalSince(lastWeatherUpdate) >= weatherUpdateInterval
   }
 
   static let defaultTemperatureUnit : UnitTemperature = {
@@ -47,13 +64,12 @@ struct UserSettings{
     return String(Int(converted.value.rounded(.toNearestOrEven)))+"º"
   }
   
-  
-  
-  
-}
-
-extension WeatherDataPoint{
-  public var displayTemperature : String{
-    return UserSettings.localizedString(from: temperature)
+  private static var lastWeatherUpdate : Date?{
+    get{
+      return UserDefaults.standard.object(forKey: UserDefaultsKey.lastWeatherUpdate.rawValue) as? Date
+    }set{
+      UserDefaults.standard.set(newValue, forKey: UserDefaultsKey.lastWeatherUpdate.rawValue)
+    }
   }
+  
 }

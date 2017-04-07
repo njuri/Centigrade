@@ -63,7 +63,7 @@ public final class CentigradeLocationManager : NSObject {
         completion(nil)
         return
       }
-      completion(firstPlacemark.locality)
+      completion(firstPlacemark.locality ?? firstPlacemark.country)
     }
   }
 }

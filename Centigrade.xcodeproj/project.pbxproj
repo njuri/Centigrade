@@ -18,6 +18,11 @@
 		CB3EC8111E92A987004E2C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3EC8101E92A987004E2C11 /* Assets.xcassets */; };
 		CB3EC8131E92AA0C004E2C11 /* WeatherSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EC8121E92AA0C004E2C11 /* WeatherSummary.swift */; };
 		CB549FF51E97A94800A526A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3EC8101E92A987004E2C11 /* Assets.xcassets */; };
+		CB549FF81E97BD5400A526A0 /* WeekForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB549FF71E97BD5400A526A0 /* WeekForecastViewController.swift */; };
+		CB549FFC1E97BD8000A526A0 /* WeekHistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB549FFA1E97BD8000A526A0 /* WeekHistoryViewCell.swift */; };
+		CB549FFD1E97BD8000A526A0 /* WeekHistoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB549FFB1E97BD8000A526A0 /* WeekHistoryViewCell.xib */; };
+		CB549FFF1E97C10E00A526A0 /* TemperatureInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB549FFE1E97C10E00A526A0 /* TemperatureInterval.swift */; };
+		CB54A0021E97C60300A526A0 /* TemperatureDisplayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54A0001E97C55800A526A0 /* TemperatureDisplayLabel.swift */; };
 		CB6501531E9018FB00F710ED /* CentigrateLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8104771E8FC52500CF5232 /* CentigrateLocationManager.swift */; };
 		CB6501571E9021A800F710ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB6501591E9021A800F710ED /* InfoPlist.strings */; };
 		CBA8AA691E90F1BF0097B93D /* WeatherDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA8AA681E90F1BF0097B93D /* WeatherDisplayViewController.swift */; };
@@ -119,6 +124,11 @@
 		CB3EC8061E92525D004E2C11 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CB3EC8101E92A987004E2C11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3EC8121E92AA0C004E2C11 /* WeatherSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSummary.swift; sourceTree = "<group>"; };
+		CB549FF71E97BD5400A526A0 /* WeekForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekForecastViewController.swift; sourceTree = "<group>"; };
+		CB549FFA1E97BD8000A526A0 /* WeekHistoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekHistoryViewCell.swift; sourceTree = "<group>"; };
+		CB549FFB1E97BD8000A526A0 /* WeekHistoryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekHistoryViewCell.xib; sourceTree = "<group>"; };
+		CB549FFE1E97C10E00A526A0 /* TemperatureInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureInterval.swift; sourceTree = "<group>"; };
+		CB54A0001E97C55800A526A0 /* TemperatureDisplayLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureDisplayLabel.swift; sourceTree = "<group>"; };
 		CB6501561E90219B00F710ED /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CB65015A1E9021AE00F710ED /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB65015C1E9021B800F710ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -177,9 +187,20 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		CB0EFA1F1E96498900A11F8A /* Cells */ = {
+		CB549FF61E97BD3F00A526A0 /* WeekHistoryView */ = {
 			isa = PBXGroup;
 			children = (
+				CB549FF91E97BD6300A526A0 /* Cells */,
+				CB549FF71E97BD5400A526A0 /* WeekForecastViewController.swift */,
+			);
+			path = WeekHistoryView;
+			sourceTree = "<group>";
+		};
+		CB549FF91E97BD6300A526A0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CB549FFA1E97BD8000A526A0 /* WeekHistoryViewCell.swift */,
+				CB549FFB1E97BD8000A526A0 /* WeekHistoryViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -197,7 +218,6 @@
 		CBA8AA671E90F1BF0097B93D /* WeatherDisplayView */ = {
 			isa = PBXGroup;
 			children = (
-				CB0EFA1F1E96498900A11F8A /* Cells */,
 				CBA8AA681E90F1BF0097B93D /* WeatherDisplayViewController.swift */,
 			);
 			path = WeatherDisplayView;
@@ -261,8 +281,10 @@
 		CBCAAE141E8EB4C4008522B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB549FF61E97BD3F00A526A0 /* WeekHistoryView */,
 				CB0EFA0F1E9639F200A11F8A /* ProfileView */,
 				CBA8AA671E90F1BF0097B93D /* WeatherDisplayView */,
+				CB54A0001E97C55800A526A0 /* TemperatureDisplayLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				CBCAAE4C1E8EC5F3008522B0 /* WeatherDataPoint.swift */,
+				CB549FFE1E97C10E00A526A0 /* TemperatureInterval.swift */,
 			);
 			name = Models;
 			path = CentigradeKit/Sources/Models;
@@ -477,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0EFA221E96827200A11F8A /* Localizable.strings in Resources */,
+				CB549FFD1E97BD8000A526A0 /* WeekHistoryViewCell.xib in Resources */,
 				CB0EFA1B1E963A1900A11F8A /* ProfileViewController.xib in Resources */,
 				CBCAAE0B1E8EB487008522B0 /* LaunchScreen.storyboard in Resources */,
 				CB6501571E9021A800F710ED /* InfoPlist.strings in Resources */,
@@ -504,11 +528,14 @@
 				CB0EFA2C1E96A1AE00A11F8A /* CoreDataFactory.swift in Sources */,
 				CB0EFA271E96A09A00A11F8A /* CoreDataStack.swift in Sources */,
 				CB0EFA2A1E96A0B400A11F8A /* Centigrade.xcdatamodeld in Sources */,
+				CB54A0021E97C60300A526A0 /* TemperatureDisplayLabel.swift in Sources */,
 				CB0EFA1D1E963A2800A11F8A /* CardStackViewController.swift in Sources */,
+				CB549FF81E97BD5400A526A0 /* WeekForecastViewController.swift in Sources */,
 				CBCAADFE1E8EB487008522B0 /* AppDelegate.swift in Sources */,
 				CBB093911E97A2F100C4CEE8 /* UserSettings.swift in Sources */,
 				CBA8AA691E90F1BF0097B93D /* WeatherDisplayViewController.swift in Sources */,
 				CB0EFA1A1E963A1900A11F8A /* ProfileViewController.swift in Sources */,
+				CB549FFC1E97BD8000A526A0 /* WeekHistoryViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBCAAE2D1E8EB7EF008522B0 /* APIClient.swift in Sources */,
+				CB549FFF1E97C10E00A526A0 /* TemperatureInterval.swift in Sources */,
 				CB3EC8131E92AA0C004E2C11 /* WeatherSummary.swift in Sources */,
 				CB3EC8071E92525D004E2C11 /* Reachability.swift in Sources */,
 				CB6501531E9018FB00F710ED /* CentigrateLocationManager.swift in Sources */,
