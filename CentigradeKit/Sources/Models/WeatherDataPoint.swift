@@ -17,6 +17,16 @@ public struct WeatherDataPoint{
   public let location : CLLocationCoordinate2D
   public let date : Date
   
+  public init(apparentTemperatureValue : Double, temperatureValue : Double, summaryString : String, latitude : Double, longitude : Double, date : Date, readableSummary : String, unit : UnitTemperature){
+    apparentTemperature = Measurement(value: apparentTemperatureValue, unit: unit)
+    temperature = Measurement(value: temperatureValue, unit: unit)
+    location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    self.readableSummary = readableSummary
+    self.date = date
+    // Dangerous
+    summary = WeatherSummary(rawValue: summaryString)!
+  }
+  
   public init?(from weatherDictionary : [String : AnyObject], location : CLLocationCoordinate2D){
     guard let apparentTemperature = weatherDictionary["apparentTemperature"] as? Double else { return nil }
     guard let temperature = weatherDictionary["temperature"] as? Double else { return nil }

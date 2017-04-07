@@ -18,7 +18,8 @@ final class WeatherDisplayViewController: UIViewController {
   @IBOutlet weak var locationBackgroundView: UIView!
   @IBOutlet weak var locationIcon: UIImageView!
   @IBOutlet weak var currentWeatherIcon: UIImageView!
-  @IBOutlet weak var currentWeatherSummary: UILabel!
+  @IBOutlet weak var currentWeatherSummaryLabel: UILabel!
+  @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
   
   let locationManager = CentigradeLocationManager()
   let cardStackController = CardStackController()
@@ -58,15 +59,13 @@ final class WeatherDisplayViewController: UIViewController {
   }
   
   func loadCurrentWeather(){
-    
-//    loadingInidcator.startAnimating()
-//
-//    if locationManager.isAuthorized{
-//      locationManager.requestCurrentLocation()
-//    }else{
-//      locationManager.requestPermission()
-//    }
-//    
+    loadingIndicator.startAnimating()
+
+    if locationManager.isAuthorized{
+      locationManager.requestCurrentLocation()
+    }else{
+      locationManager.requestPermission()
+    }
   }
   
   override func viewDidLayoutSubviews() {
@@ -86,7 +85,7 @@ final class WeatherDisplayViewController: UIViewController {
   
   func sendWeatherRequest(with coordinate : CLLocationCoordinate2D){
     APIClient.requestForecast(for: coordinate) { (dataPoint, error) in
-     // self.loadingInidcator.stopAnimating()
+     self.loadingIndicator.stopAnimating()
       guard error == nil else {
         self.updateLabels(with: nil)
         return
@@ -98,11 +97,12 @@ final class WeatherDisplayViewController: UIViewController {
   func updateLabels(with dataPoint : WeatherDataPoint?){
     guard let dataPoint = dataPoint else{
       degreeLabel.text = "-"
-   //   descriptionLabel.text = "-"
+      currentWeatherSummaryLabel.text = "-"
       return
     }
     degreeLabel.text = dataPoint.displayTemperature
-   // descriptionLabel.text = dataPoint.readableSummary
+    currentWeatherSummaryLabel.text = dataPoint.readableSummary
+    currentWeatherIcon.image = dataPoint.summary.icon
   }
   
   func updatePlace(with name : String?){

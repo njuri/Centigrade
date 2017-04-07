@@ -20,7 +20,7 @@ struct CoreDataFactory{
   static func saveDataPoint(dataPoint : WeatherDataPoint)->WeatherDataArchiveObject{
     let entity = NSEntityDescription.insertNewObject(forEntityName: WeatherDataArchiveObject.classString(), into: context) as! WeatherDataArchiveObject
     entity.apparentTemperature = dataPoint.apparentTemperature.value
-    entity.temperatureUnit = dataPoint.temperature.unit.symbol
+    entity.unitSymbol = dataPoint.temperature.unit.symbol
     entity.temperature = dataPoint.temperature.value
     entity.longitude = dataPoint.location.longitude
     entity.latitude = dataPoint.location.latitude
@@ -57,6 +57,21 @@ struct CoreDataFactory{
     return NSEntityDescription.insertNewObject(forEntityName: UserObject.classString(), into: context) as! UserObject
   }
   
+}
+
+extension WeatherDataArchiveObject{
+//  var dataPoint : WeatherDataPoint{
+//  }
+  
+  var measurementUnit : UnitTemperature{
+    guard let symbolString = unitSymbol else { return .fahrenheit }
+    switch symbolString{
+    case UnitTemperature.celsius.symbol: return .celsius
+    case UnitTemperature.fahrenheit.symbol: return .fahrenheit
+    case UnitTemperature.kelvin.symbol: return .kelvin
+    default: return .fahrenheit
+    }
+  }
 }
 
 extension NSObject{

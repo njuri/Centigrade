@@ -17,6 +17,7 @@
 		CB3EC8071E92525D004E2C11 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EC8061E92525D004E2C11 /* Reachability.swift */; };
 		CB3EC8111E92A987004E2C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3EC8101E92A987004E2C11 /* Assets.xcassets */; };
 		CB3EC8131E92AA0C004E2C11 /* WeatherSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EC8121E92AA0C004E2C11 /* WeatherSummary.swift */; };
+		CB549FF51E97A94800A526A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3EC8101E92A987004E2C11 /* Assets.xcassets */; };
 		CB6501531E9018FB00F710ED /* CentigrateLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8104771E8FC52500CF5232 /* CentigrateLocationManager.swift */; };
 		CB6501571E9021A800F710ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB6501591E9021A800F710ED /* InfoPlist.strings */; };
 		CBA8AA691E90F1BF0097B93D /* WeatherDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA8AA681E90F1BF0097B93D /* WeatherDisplayViewController.swift */; };
@@ -479,6 +480,7 @@
 				CB0EFA1B1E963A1900A11F8A /* ProfileViewController.xib in Resources */,
 				CBCAAE0B1E8EB487008522B0 /* LaunchScreen.storyboard in Resources */,
 				CB6501571E9021A800F710ED /* InfoPlist.strings in Resources */,
+				CB549FF51E97A94800A526A0 /* Assets.xcassets in Resources */,
 				CBCAAE081E8EB487008522B0 /* Assets.xcassets in Resources */,
 				CBCAAE031E8EB487008522B0 /* Main.storyboard in Resources */,
 			);

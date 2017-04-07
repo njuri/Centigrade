@@ -15,7 +15,7 @@ public enum WeatherSummary : String{
   case partlyCloudyNight = "partly-cloudy-night"
   case rain,snow,sleet,wind,fog,cloudy
   
-  var icon : UIImage{
+  public var icon : UIImage{
     switch self {
     case .clearDay: return #imageLiteral(resourceName: "clear-day")
     case .clearNight: return #imageLiteral(resourceName: "clear-night")

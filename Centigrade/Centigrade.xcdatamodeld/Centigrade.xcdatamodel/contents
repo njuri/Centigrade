@@ -12,10 +12,10 @@
         <attribute name="readableSummary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="temperature" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="temperatureUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unitSymbol" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="WeatherDataArchiveObject" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="UserObject" positionX="-54" positionY="54" width="128" height="75"/>
+        <element name="WeatherDataArchiveObject" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>
