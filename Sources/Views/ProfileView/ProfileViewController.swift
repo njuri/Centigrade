@@ -62,6 +62,10 @@ final class ProfileViewController : UIViewController {
     profileImageView.layer.cornerRadius = profileImageView.frame.height/2
   }
   
+  override var shouldAutorotate: Bool{
+    return false
+  }
+  
   @IBAction func editProfilePressed(_ sender: Any) {
     if isEditingProfile {
       toggleProfileEdit(isOn: false)
@@ -155,6 +159,7 @@ final class ProfileViewController : UIViewController {
     case 2: UserSettings.customTemperatureUnit = .kelvin
     default: print("")
     }
+    profileTableView.reloadSections([0], with: .none)
   }
   
   @IBAction func automaticDidSwitch(_ sender: Any) {
@@ -167,6 +172,7 @@ final class ProfileViewController : UIViewController {
       profileTableView.insertRows(at: [IndexPath(row: 1, section:0)], with: .automatic)
     }
     setupAutomaticCell()
+    profileTableView.reloadSections([0], with: .none)
   }
   
   @IBAction func chevronPressed(_ sender: Any) {
@@ -220,7 +226,24 @@ extension ProfileViewController : UITableViewDelegate{
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Temperature units"
+    return NSLocalizedString("TEMPERATURE_UNITS_LABEL", comment: "Temperature units")
+  }
+  
+  func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    if section == 0{
+      if let unit = UserSettings.customTemperatureUnit{
+        switch unit {
+        case UnitTemperature.celsius: return NSLocalizedString("CELSIUS_UNIT_DESCRIPTION", comment: "")
+        case UnitTemperature.fahrenheit: return NSLocalizedString("FAHRENHEIT_UNIT_DESCRIPTION", comment: "")
+        case UnitTemperature.kelvin: return NSLocalizedString("KELVIN_UNIT_DESCRIPTION", comment: "")
+        default: return nil
+        }
+      }else{
+        return String(format: NSLocalizedString("AUTOMATIC_UNIT_DESCRIPTION", comment: "Centigrade will show temperature in units based on phone's default settings. Currently using: %@"), UserSettings.defaultTemperatureUnit.symbol)
+      }
+    }else{
+      return nil
+    }
   }
 }
 

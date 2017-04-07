@@ -117,8 +117,6 @@ final class WeatherDisplayViewController: UIViewController {
     placeLabel.sizeToFit()
   }
   
-  
-  
 }
 
 extension WeatherDisplayViewController : LocationManagerDelegate{
@@ -135,6 +133,7 @@ extension WeatherDisplayViewController : LocationManagerDelegate{
   }
   
   func didReceive(location: CLLocation) {
+    UserSettings.currentLocation = location.coordinate
     sendWeatherRequest(with: location.coordinate)
     locationManager.placemarkLocality(from: location) { locality in
       self.updatePlace(with: locality)

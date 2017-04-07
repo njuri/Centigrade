@@ -14,6 +14,8 @@
 		CB0EFA271E96A09A00A11F8A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA261E96A09A00A11F8A /* CoreDataStack.swift */; };
 		CB0EFA2A1E96A0B400A11F8A /* Centigrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA281E96A0B400A11F8A /* Centigrade.xcdatamodeld */; };
 		CB0EFA2C1E96A1AE00A11F8A /* CoreDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA2B1E96A1AE00A11F8A /* CoreDataFactory.swift */; };
+		CB3DC57C1E97F259003E9DA5 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CBCAAE3B1E8EBD30008522B0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB3DC57F1E97F312003E9DA5 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBCAAE3B1E8EBD30008522B0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CB3EC8071E92525D004E2C11 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EC8061E92525D004E2C11 /* Reachability.swift */; };
 		CB3EC8111E92A987004E2C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3EC8101E92A987004E2C11 /* Assets.xcassets */; };
 		CB3EC8131E92AA0C004E2C11 /* WeatherSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EC8121E92AA0C004E2C11 /* WeatherSummary.swift */; };
@@ -99,12 +101,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CB3DC57B1E97F254003E9DA5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CB3DC57C1E97F259003E9DA5 /* Alamofire.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBCAAE291E8EB7AD008522B0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CB3DC57F1E97F312003E9DA5 /* Alamofire.framework in Embed Frameworks */,
 				CBCAAE251E8EB7AD008522B0 /* CentigradeKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -383,6 +396,7 @@
 				CBCAAE191E8EB7AD008522B0 /* Frameworks */,
 				CBCAAE1A1E8EB7AD008522B0 /* Headers */,
 				CBCAAE1B1E8EB7AD008522B0 /* Resources */,
+				CB3DC57B1E97F254003E9DA5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -708,6 +722,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ee.appdromeda.Centigrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -723,6 +738,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ee.appdromeda.Centigrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

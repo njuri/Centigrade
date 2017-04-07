@@ -21,7 +21,10 @@ public final class APIClient{
   private static let apiURL = baseURL.appendingPathComponent(apiKey)
   
   private static let preferredLanguageCode : String = {
-    return Locale.preferredLanguages.first ?? "en"
+    guard let lang = Locale.preferredLanguages.first, lang.characters.count > 1  else { return "en" }
+    let startIndex = lang.index(lang.startIndex, offsetBy: 0)
+    let endIndex = lang.index(lang.startIndex, offsetBy: 1)
+    return lang[startIndex...endIndex]
   }()
   
   public static func requestCurrentForecast(for location : CLLocationCoordinate2D, language : String = preferredLanguageCode, completion : @escaping (_ dataPoint : WeatherDataPoint?,_ error : ErrorType?)->()){
@@ -70,9 +73,9 @@ public final class APIClient{
 
       var points : [WeatherDataPoint] = []
       for dict in dataDict{
-        guard let point = WeatherDataPoint(from: dict, location: location) else { continue }
-        
-        points.append(point)
+        if let point = WeatherDataPoint(from: dict, location: location){
+          points.append(point)
+        }
       }
       
       completion(points, nil)

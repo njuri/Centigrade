@@ -7,22 +7,57 @@
 //
 
 import UIKit
+import CoreLocation
 import CentigradeKit
 
 final class WeekForecastViewController: UIViewController {
   
   @IBOutlet weak var historyTableView: UITableView!
   
-  var historyDataPoints : [WeatherDataPoint] = []
+  var historyDataPoints : [WeatherDataPoint] = []{
+    didSet{
+      DispatchQueue.main.async {
+        self.historyTableView.reloadData()
+      }
+    }
+  }
+  
+  var currentLocation : CLLocationCoordinate2D? = UserSettings.currentLocation{
+    didSet{
+      loadCurrentWeather()
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
     historyTableView.register(UINib(nibName: WeekHistoryViewCell.classString(), bundle:nil), forCellReuseIdentifier: WeekHistoryViewCell.classString())
+    NotificationCenter.default.addObserver(self, selector: #selector(locationDidUpdate), name: CentigradeNotification.locationDidChange.notification, object: nil)
+    //historyTableView.tableFooterView = UIView()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
   
+  func locationDidUpdate(){
+    currentLocation = UserSettings.currentLocation
+  }
+  
+  func loadCurrentWeather(){
+    guard let currentLocation = currentLocation  else { return }
+    guard UserSettings.canUpdateForecast else { return }
+    print("Starting forecast update")
+    
+    APIClient.requestWeeklyForecast(for: currentLocation) { (dataPoints, error) in
+      guard error == nil else {
+        return
+      }
+      UserSettings.didUpdateForecast()
+      self.historyDataPoints = dataPoints
+    }
+  }
 
 }
 

@@ -19,7 +19,7 @@ struct CoreDataFactory{
 
   static func saveDataPoint(dataPoint : WeatherDataPoint)->WeatherDataArchiveObject{
     let entity = NSEntityDescription.insertNewObject(forEntityName: WeatherDataArchiveObject.classString(), into: context) as! WeatherDataArchiveObject
-    entity.apparentTemperature = dataPoint.apparentTemperature.value
+    //entity.apparentTemperature = dataPoint.apparentTemperature.value
     entity.unitSymbol = dataPoint.temperature.unit.symbol
     entity.temperature = dataPoint.temperature.value
     entity.longitude = dataPoint.location.longitude

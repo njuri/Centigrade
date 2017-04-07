@@ -41,7 +41,7 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P1F-Lf-47d">
                             <rect key="frame" x="126.5" y="33" width="121.5" height="121.5"/>
-                            <color key="backgroundColor" white="0.69667968749999998" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="P1F-Lf-47d" secondAttribute="height" id="ilV-cX-aMM"/>
                             </constraints>

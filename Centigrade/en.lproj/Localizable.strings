@@ -14,5 +14,12 @@
 "FROM_LIBRARY_LABEL" = "Choose from library";
 "CANCEL_LABEL" = "Cancel";
 "TAKE_CAMERA_LABEL" = "Take using camera";
-"CAMERA_NOT_AVAILABLE" = "";
-"PHOTO_LIBRARY_NOT_AVAILABLE" = "";
+"TEMPERATURE_UNITS_LABEL" = "Temperature units";
+"AUTOMATIC_LABEL" = "Automatic";
+"THEME_LABEL" = "Theme";
+"LIGHT_LABEL" = "Light";
+"DARK_LABEL" = "Dark";
+"AUTOMATIC_UNIT_DESCRIPTION" = "Centigrade will show temperature in units based on phone's default settings. Currently using: %@";
+"CELSIUS_UNIT_DESCRIPTION" = "Centigrade will show temperature in degrees in degrees Celsius.";
+"KELVIN_UNIT_DESCRIPTION" = "Centigrade will show temperature in Kelvin.";
+"FAHRENHEIT_UNIT_DESCRIPTION" = "Centigrade will show temperature in degrees Fahrenheit.";
