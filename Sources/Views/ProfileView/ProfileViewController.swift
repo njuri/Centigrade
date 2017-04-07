@@ -36,17 +36,23 @@ final class ProfileViewController : UIViewController {
   
   var isEditingProfile = false
   var user : UserObject = CoreDataFactory.user
+  var weatherHistoryPoints : [WeatherDataPoint] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     setupSegmentedControl()
-    setupAutomaticCell()
+    updateAutomaticCell()
+    updateSegmentCell()
     editProfileButton.setTitle(NSLocalizedString("EDIT_PROFILE_BUTTON", comment: "Edit Profile"), for: .normal)
+    automaticLabel.text = NSLocalizedString("AUTOMATIC_LABEL", comment: "Automatic")
+    unitsLabel.text = NSLocalizedString("UNITS_LABEL", comment: "Units")
     profilePlaceholderImageView.image = profilePlaceholderImageView.image?.withRenderingMode(.alwaysTemplate)
     profilePlaceholderImageView.tintColor = .gray
     nameField.placeholder = NSLocalizedString("YOUR_NAME_LABEL", comment: "Your Name")
     nameField.text = user.name
+    profileTableView.register(UINib(nibName: WeatherHistoryViewCell.classString(), bundle:nil), forCellReuseIdentifier: WeatherHistoryViewCell.classString())
+    loadHistory()
     guard let imageData = user.imageData else { return }
     profilePlaceholderImageView.image = nil
     DispatchQueue.global(qos: .userInitiated).async {
@@ -101,8 +107,12 @@ final class ProfileViewController : UIViewController {
     }) { _ in
       self.addButton.isHidden = !isOn
     }
-    
-    
+  }
+  
+  func loadHistory(){
+    CoreDataFactory.fetchWeatherHistory { (points) in
+      
+    }
   }
   
   @IBAction func addImagePressed(_ sender: Any) {
@@ -127,7 +137,7 @@ final class ProfileViewController : UIViewController {
     
   }
   
-  func setupAutomaticCell(){
+  func updateAutomaticCell(){
     let labelAlpha : CGFloat
     let isAutomatic : Bool
     if let _ = UserSettings.customTemperatureUnit{
@@ -140,6 +150,22 @@ final class ProfileViewController : UIViewController {
     automaticSwitch.setOn(isAutomatic, animated: true)
     UIView.animate(withDuration: 0.3, animations: {
       self.automaticLabel.alpha = labelAlpha
+    })
+  }
+  
+  func updateSegmentCell(){
+    let labelAlpha : CGFloat
+    let isAutomatic : Bool
+    if let _ = UserSettings.customTemperatureUnit{
+      labelAlpha = 1
+      isAutomatic = false
+    }else{
+      labelAlpha = 0.3
+      isAutomatic = true
+    }
+    unitSegment.isEnabled = !isAutomatic
+    UIView.animate(withDuration: 0.3, animations: {
+      self.unitsLabel.alpha = labelAlpha
     })
   }
   
@@ -163,15 +189,13 @@ final class ProfileViewController : UIViewController {
   }
   
   @IBAction func automaticDidSwitch(_ sender: Any) {
-    
     if automaticSwitch.isOn{
       UserSettings.customTemperatureUnit = nil
-      profileTableView.deleteRows(at: [IndexPath(row: 1, section:0)], with: .automatic)
     }else{
       UserSettings.customTemperatureUnit = UserSettings.defaultTemperatureUnit
-      profileTableView.insertRows(at: [IndexPath(row: 1, section:0)], with: .automatic)
     }
-    setupAutomaticCell()
+    updateAutomaticCell()
+    updateSegmentCell()
     profileTableView.reloadSections([0], with: .none)
   }
   
@@ -198,22 +222,27 @@ final class ProfileViewController : UIViewController {
 
 extension ProfileViewController : UITableViewDataSource{
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return 2
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if let _ = UserSettings.customTemperatureUnit{
+    if section == 0{
       return 2
     }else{
-      return 1
+      return weatherHistoryPoints.count
     }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if indexPath.row == 0{
-      return automaticCell
+    if indexPath.section == 0{
+      if indexPath.row == 0{
+        return automaticCell
+      }else{
+        return unitCell
+      }
     }else{
-      return unitCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: WeatherHistoryViewCell.classString()) as! WeatherHistoryViewCell
+      return cell
     }
   }
 }
@@ -221,12 +250,18 @@ extension ProfileViewController : UITableViewDataSource{
 extension ProfileViewController : UITableViewDelegate{
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    automaticSwitch.setOn(!automaticSwitch.isOn, animated: true)
-    automaticDidSwitch(automaticSwitch)
+    if indexPath.section == 0 && indexPath.row == 0{
+      automaticSwitch.setOn(!automaticSwitch.isOn, animated: true)
+      automaticDidSwitch(automaticSwitch)
+    }
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return NSLocalizedString("TEMPERATURE_UNITS_LABEL", comment: "Temperature units")
+    if section == 0{
+      return NSLocalizedString("TEMPERATURE_UNITS_LABEL", comment: "Temperature units")
+    }else{
+      return NSLocalizedString("WEATHER_HISTORY_LABEL", comment: "Weather history")
+    }
   }
   
   func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
@@ -242,7 +277,11 @@ extension ProfileViewController : UITableViewDelegate{
         return String(format: NSLocalizedString("AUTOMATIC_UNIT_DESCRIPTION", comment: "Centigrade will show temperature in units based on phone's default settings. Currently using: %@"), UserSettings.defaultTemperatureUnit.symbol)
       }
     }else{
-      return nil
+      if weatherHistoryPoints.count == 0{
+        return NSLocalizedString("NO_HISTORY_LABEL", comment: "No recent history.")
+      }else{
+        return nil
+      }
     }
   }
 }
@@ -255,11 +294,9 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
       processSelectedImage(image: editedImage)
-    }else
-      if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-        processSelectedImage(image: originalImage)
+    }else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+      processSelectedImage(image: originalImage)
     }
-    
     dismiss(animated: true, completion: nil)
   }
 }

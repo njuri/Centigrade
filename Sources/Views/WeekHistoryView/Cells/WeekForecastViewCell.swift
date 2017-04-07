@@ -1,5 +1,5 @@
 //
-//  WeekHistoryViewCell.swift
+//  WeekForecastViewCell.swift
 //  Centigrade
 //
 //  Created by Juri Noga on 07.04.17.
@@ -9,7 +9,7 @@
 import UIKit
 import CentigradeKit
 
-final class WeekHistoryViewCell: UITableViewCell {
+final class WeekForecastViewCell: UITableViewCell {
   
   @IBOutlet weak var weekdayLabel: UILabel!
   @IBOutlet weak var highTemperatureLabel: TemperatureDisplayLabel!

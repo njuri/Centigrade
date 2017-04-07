@@ -94,6 +94,9 @@ final class WeatherDisplayViewController: UIViewController {
       }
       UserSettings.didUpdateWeather()
       self.updateLabels(with: dataPoint)
+      if let dataPoint = dataPoint{
+        _ = CoreDataFactory.saveDataPoint(dataPoint: dataPoint)
+      }
     }
   }
   

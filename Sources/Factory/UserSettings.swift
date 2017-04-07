@@ -39,6 +39,12 @@ struct UserSettings{
     return formatter
   }()
   
+  static let weatherHistoryDateFormater : DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "d MMM - H:mm"
+    return formatter
+  }()
+  
   static let defaultTemperatureUnit : UnitTemperature = {
     let mf = MeasurementFormatter()
     let a = Measurement(value: 0, unit: UnitTemperature.kelvin)
@@ -103,7 +109,7 @@ struct UserSettings{
     }
   }
   
-  private static var lastForecastUpdate : Date?{
+  static var lastForecastUpdate : Date?{
     get{
       return UserDefaults.standard.object(forKey: UserDefaultsKey.lastForecastUpdate.rawValue) as? Date
     }set{

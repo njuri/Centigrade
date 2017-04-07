@@ -32,7 +32,7 @@ final class WeekForecastViewController: UIViewController {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
-    historyTableView.register(UINib(nibName: WeekHistoryViewCell.classString(), bundle:nil), forCellReuseIdentifier: WeekHistoryViewCell.classString())
+    historyTableView.register(UINib(nibName: WeekForecastViewCell.classString(), bundle:nil), forCellReuseIdentifier: WeekForecastViewCell.classString())
     NotificationCenter.default.addObserver(self, selector: #selector(locationDidUpdate), name: CentigradeNotification.locationDidChange.notification, object: nil)
     //historyTableView.tableFooterView = UIView()
   }
@@ -50,8 +50,10 @@ final class WeekForecastViewController: UIViewController {
     guard UserSettings.canUpdateForecast else { return }
     print("Starting forecast update")
     
+    UserSettings.didUpdateForecast()
     APIClient.requestWeeklyForecast(for: currentLocation) { (dataPoints, error) in
       guard error == nil else {
+        UserSettings.lastForecastUpdate = nil
         return
       }
       UserSettings.didUpdateForecast()
@@ -72,7 +74,7 @@ extension WeekForecastViewController : UITableViewDataSource{
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = historyTableView.dequeueReusableCell(withIdentifier: WeekHistoryViewCell.classString()) as! WeekHistoryViewCell
+    let cell = historyTableView.dequeueReusableCell(withIdentifier: WeekForecastViewCell.classString()) as! WeekForecastViewCell
     let point = historyDataPoints[indexPath.row]
     cell.set(to: point)
     return cell
