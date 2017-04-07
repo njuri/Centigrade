@@ -365,7 +365,6 @@
 				TargetAttributes = {
 					CBCAADF91E8EB487008522B0 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 949BCVF3AR;
 						ProvisioningStyle = Automatic;
 					};
 					CBCAAE1C1E8EB7AD008522B0 = {
@@ -620,7 +619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 949BCVF3AR;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Centigrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -636,7 +635,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 949BCVF3AR;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Centigrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
