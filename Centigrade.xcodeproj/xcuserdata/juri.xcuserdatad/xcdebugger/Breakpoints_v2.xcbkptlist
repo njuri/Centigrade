@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/Views/ProfileView/ProfileViewController.swift"
-            timestampString = "513295004.386156"
+            timestampString = "513301526.529046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "segmentDidChange(_:)"
             landmarkType = "7">
          </BreakpointContent>

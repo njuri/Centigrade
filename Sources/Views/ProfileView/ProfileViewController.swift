@@ -8,6 +8,7 @@
 
 import UIKit
 import CentigradeKit
+import CoreLocation
 
 protocol ProfileCardControllerDelegate: class{
   func dismissPressed()
@@ -37,6 +38,7 @@ final class ProfileViewController : UIViewController {
   var isEditingProfile = false
   var user : UserObject = CoreDataFactory.user
   var weatherHistoryPoints : [WeatherDataPoint] = []
+  let geocoder = CLGeocoder()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -111,7 +113,10 @@ final class ProfileViewController : UIViewController {
   
   func loadHistory(){
     CoreDataFactory.fetchWeatherHistory { (points) in
-      
+      self.weatherHistoryPoints = points
+      DispatchQueue.main.async {
+        self.profileTableView.reloadSections([1], with: .automatic)
+      }
     }
   }
   
@@ -242,6 +247,17 @@ extension ProfileViewController : UITableViewDataSource{
       }
     }else{
       let cell = tableView.dequeueReusableCell(withIdentifier: WeatherHistoryViewCell.classString()) as! WeatherHistoryViewCell
+      let point = weatherHistoryPoints[indexPath.row]
+      cell.set(to: point)
+      geocoder.reverseGeocodeLocation(CLLocation(latitude: point.location.latitude, longitude: point.location.longitude)) { (placemarks, error) in
+        DispatchQueue.main.async {
+        if let firstPlacemark = placemarks?.first, error == nil {
+          cell.placeLabel.text = firstPlacemark.locality ?? firstPlacemark.country
+        }else{
+          cell.placeLabel.text = "-"
+        }
+        }
+      }
       return cell
     }
   }
@@ -253,6 +269,14 @@ extension ProfileViewController : UITableViewDelegate{
     if indexPath.section == 0 && indexPath.row == 0{
       automaticSwitch.setOn(!automaticSwitch.isOn, animated: true)
       automaticDidSwitch(automaticSwitch)
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    if indexPath.section == 0{
+      return 44
+    }else{
+      return 55
     }
   }
   

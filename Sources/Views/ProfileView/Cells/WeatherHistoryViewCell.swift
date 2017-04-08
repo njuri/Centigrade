@@ -11,6 +11,7 @@ import CentigradeKit
 
 final class WeatherHistoryViewCell: UITableViewCell {
   
+  @IBOutlet weak var placeLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var temperatureLabel: TemperatureDisplayLabel!
   @IBOutlet weak var iconView: UIImageView!

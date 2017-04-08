@@ -59,6 +59,7 @@ struct CoreDataFactory{
     
     let request : NSFetchRequest<WeatherDataArchiveObject> = WeatherDataArchiveObject.fetchRequest()
     request.includesPropertyValues = true
+    request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
     let asyncRequest = NSAsynchronousFetchRequest(fetchRequest: request) { result in
       if let final = result.finalResult{
         completion(final.flatMap{dataPoint(from: $0)})

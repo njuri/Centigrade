@@ -16,7 +16,15 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert. .sound], categories: nil))
+    setupNotifcations()
     return true
+  }
+  
+  func setupNotifcations(){
+    let n = UILocalNotification()
+    n.repeatInterval = .minute
+    n.fireDate =
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
