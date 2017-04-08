@@ -29,9 +29,9 @@ enum UserDefaultsKey : String{
 struct UserSettings{
 
   /// Update weather not more frequently than 5 minutes
-  static let weatherUpdateInterval : TimeInterval = 2
+  static let weatherUpdateInterval : TimeInterval = 5 * 60
   /// Update weather not more frequently than 20 minutes
-  static let forecastUpdateInterval : TimeInterval = 2
+  static let forecastUpdateInterval : TimeInterval = 20 * 60
   static let measurementFormatter = MeasurementFormatter()
   static let weekdayDateFormatter : DateFormatter = {
     let formatter = DateFormatter()

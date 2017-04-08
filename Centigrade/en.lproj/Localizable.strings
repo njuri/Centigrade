@@ -19,11 +19,12 @@
 "THEME_LABEL" = "Theme";
 "LIGHT_LABEL" = "Light";
 "DARK_LABEL" = "Dark";
-"AUTOMATIC_UNIT_DESCRIPTION" = "Centigrade will show temperature in units based on phone's default settings. Currently using: %@";
-"CELSIUS_UNIT_DESCRIPTION" = "Centigrade will show temperature in degrees Celsius.";
-"KELVIN_UNIT_DESCRIPTION" = "Centigrade will show temperature in Kelvin.";
-"FAHRENHEIT_UNIT_DESCRIPTION" = "Centigrade will show temperature in degrees Fahrenheit.";
+"AUTOMATIC_UNIT_DESCRIPTION" = "Centigrade will show the temperature in units based on phone's default settings. Currently using: %@";
+"CELSIUS_UNIT_DESCRIPTION" = "Centigrade will show the temperature in degrees Celsius.";
+"KELVIN_UNIT_DESCRIPTION" = "Centigrade will show the temperature in Kelvin.";
+"FAHRENHEIT_UNIT_DESCRIPTION" = "Centigrade will show the temperature in degrees Fahrenheit.";
 "AUTOMATIC_LABEL" = "Automatic";
 "UNITS_LABEL" = "Units";
 "WEATHER_HISTORY_LABEL" = "Weather history";
 "NO_HISTORY_LABEL" = "No recent weather history.";
+"ITS_TIME_TO_CHECK_THE_WEATHER" = "It's time to check the weather.";

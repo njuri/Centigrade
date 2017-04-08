@@ -29,7 +29,8 @@ public struct WeatherDataPoint{
   public init?(from weatherDictionary : [String : AnyObject], location : CLLocationCoordinate2D){
     guard let iconSummary = weatherDictionary["icon"] as? String, let summary = WeatherSummary(rawValue: iconSummary) else { return nil }
     guard let readableSummary = weatherDictionary["summary"] as? String else { return nil }
-    guard let time = weatherDictionary["time"] as? TimeInterval else { return nil }
+    guard let time =
+      weatherDictionary["time"] as? TimeInterval else { return nil }
 
     //self.apparentTemperature = Measurement(value: apparentTemperature, unit: UnitTemperature.fahrenheit)
     self.summary = summary

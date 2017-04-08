@@ -16,17 +16,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    application.registerUserNotificationSettings(UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.sound], categories: nil))
+    
+    NotificationManager.registerForNotifications()
     return true
-  }
-  
-  func setupNotifcations(){
-    let n = UILocalNotification()
-    n.repeatInterval = .second
-    n.fireDate = Date()
-    n.alertBody = NSLocalizedString("CHECK_WEATHER_LABEL", comment: "Check weather")
-    n.timeZone = NSTimeZone.local
-    UIApplication.shared.scheduleLocalNotification(n)
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
@@ -38,7 +30,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationDidEnterBackground(_ application: UIApplication) {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    setupNotifcations()
   }
 
   func applicationWillEnterForeground(_ application: UIApplication) {
