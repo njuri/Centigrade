@@ -153,6 +153,8 @@
 		CB87C9161E98390C000C1CC4 /* WeatherHistoryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherHistoryViewCell.xib; sourceTree = "<group>"; };
 		CBA8AA681E90F1BF0097B93D /* WeatherDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDisplayViewController.swift; sourceTree = "<group>"; };
 		CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		CBABB0071E98BF5A004DD85A /* et-EE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "et-EE"; path = "et-EE.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		CBABB0081E98BF5B004DD85A /* et-EE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "et-EE"; path = "et-EE.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CBCAADFA1E8EB487008522B0 /* Centigrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Centigrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCAADFD1E8EB487008522B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBCAAE021E8EB487008522B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				en,
 				Base,
 				ru,
+				"et-EE",
 			);
 			mainGroup = CBCAADF11E8EB487008522B0;
 			productRefGroup = CBCAADFB1E8EB487008522B0 /* Products */;
@@ -592,6 +595,7 @@
 			children = (
 				CB0EFA231E96827200A11F8A /* en */,
 				CB0EFA251E96827800A11F8A /* ru */,
+				CBABB0081E98BF5B004DD85A /* et-EE */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -601,6 +605,7 @@
 			children = (
 				CB65015A1E9021AE00F710ED /* ru */,
 				CB65015C1E9021B800F710ED /* en */,
+				CBABB0071E98BF5A004DD85A /* et-EE */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

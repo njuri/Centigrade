@@ -6,6 +6,21 @@
   Copyright © 2017 Juri Noga. All rights reserved.
 */
 
-"DONE_BUTTON" = "Сохранить";
-"EDIT_PROFILE_BUTTON" = "Редактировать Профиль";
+"DONE_BUTTON" = "Done";
+"EDIT_PROFILE_BUTTON" = "Изменить Профиль";
 "YOUR_NAME_LABEL" = "Ваше Имя";
+"PICTURE_QUESTION_LABEL" = "How do you want to add your profile picture?";
+"PROFILE_IMAGE_LABEL" = "Фото профиля";
+"FROM_LIBRARY_LABEL" = "Выбрать из альбома";
+"CANCEL_LABEL" = "Отменить";
+"TAKE_CAMERA_LABEL" = "Take using camera";
+"TEMPERATURE_UNITS_LABEL" = "Temperature units";
+"AUTOMATIC_LABEL" = "Автоматически";
+"AUTOMATIC_UNIT_DESCRIPTION" = "Centigrade will show the temperature in units based on phone's default settings. Currently using: %@";
+"CELSIUS_UNIT_DESCRIPTION" = "Centigrade will show the temperature in degrees Celsius.";
+"KELVIN_UNIT_DESCRIPTION" = "Centigrade will show the temperature in Kelvin.";
+"FAHRENHEIT_UNIT_DESCRIPTION" = "Centigrade will show the temperature in degrees Fahrenheit.";
+"UNITS_LABEL" = "Единицы";
+"WEATHER_HISTORY_LABEL" = "История измерений погоды";
+"NO_HISTORY_LABEL" = "Нет недавних измерений.";
+"ITS_TIME_TO_CHECK_THE_WEATHER" = "Пора проверить погоду!";

@@ -1,0 +1,26 @@
+/* 
+  Localized.strings
+  Centigrade
+
+  Created by Juri Noga on 06.04.17.
+  Copyright © 2017 Juri Noga. All rights reserved.
+*/
+
+"DONE_BUTTON" = "Valmis";
+"EDIT_PROFILE_BUTTON" = "Muuda Profiil";
+"YOUR_NAME_LABEL" = "Sinu Nimi";
+"PICTURE_QUESTION_LABEL" = "Kuidas soovid pilti määrata?";
+"PROFILE_IMAGE_LABEL" = "Profiili pilt";
+"FROM_LIBRARY_LABEL" = "Vali albumist";
+"CANCEL_LABEL" = "Loobu";
+"TAKE_CAMERA_LABEL" = "Tee pilti";
+"TEMPERATURE_UNITS_LABEL" = "Temperatuuriühik";
+"AUTOMATIC_LABEL" = "Auto";
+"AUTOMATIC_UNIT_DESCRIPTION" = "Centigrade näitab temperatuuri vaikimisi ühikutes. Praegu: %@";
+"CELSIUS_UNIT_DESCRIPTION" = "Centigrade nätab temperatuuri Celsiuse kraadides.";
+"KELVIN_UNIT_DESCRIPTION" = "Centigrade nätab temperatuuri kelvinites.";
+"FAHRENHEIT_UNIT_DESCRIPTION" = "Centigrade nätab temperatuuri Fahrenheiti kraadides.";
+"UNITS_LABEL" = "Ühikud";
+"WEATHER_HISTORY_LABEL" = "Ilma ajalugu";
+"NO_HISTORY_LABEL" = "Ajalugu on tühi";
+"ITS_TIME_TO_CHECK_THE_WEATHER" = "Kontrolli ilma!";

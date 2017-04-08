@@ -6,6 +6,6 @@
   Copyright © 2017 Juri Noga. All rights reserved.
 */
 
-"NSLocationWhenInUseUsageDescription" = "Centigrade will use your location to provide local weather information.";
-"NSPhotoLibraryUsageDescription" = "Centigrade requires access to photo library in order to update your profile picture.";
-"NSCameraUsageDescription" = "Centigrade requires access to camera in order to update your profile picture.";
+"NSLocationWhenInUseUsageDescription" = "Centigrade использует местоположение для определения прогноза погоды.";
+"NSPhotoLibraryUsageDescription" = "Чтобы изменить фото Centigrade требуется доступ к альбому.";
+"NSCameraUsageDescription" = "Чтобы изменить фото Centigrade требуется доступ к камере.";

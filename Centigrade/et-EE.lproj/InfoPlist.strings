@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  Centigrade
+
+  Created by Juri Noga on 01.04.17.
+  Copyright © 2017 Juri Noga. All rights reserved.
+*/
+
+"NSLocationWhenInUseUsageDescription" = "Centigrade kasutab Sinu asukohta välistemperatuuri määramiseks.";
+"NSPhotoLibraryUsageDescription" = "Profiilipildi muutmiseks Centigrade vajab liigipääsu pildialbumile.";
+"NSCameraUsageDescription" = "Profiilipildi muutmiseks Centigrade vajab kaamera liigipääsu.";
