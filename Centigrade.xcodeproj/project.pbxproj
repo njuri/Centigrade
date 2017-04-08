@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A5D8C7FD0A4C4375D864B41 /* Pods_Centigrade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4687698F2A5D9F206A12449 /* Pods_Centigrade.framework */; };
+		203FB75FD50DF7B40439689D /* Pods_CentigradeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E5007630F79610162F16B3 /* Pods_CentigradeKit.framework */; };
 		CB0EFA1A1E963A1900A11F8A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA181E963A1900A11F8A /* ProfileViewController.swift */; };
 		CB0EFA1B1E963A1900A11F8A /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0EFA191E963A1900A11F8A /* ProfileViewController.xib */; };
 		CB0EFA1D1E963A2800A11F8A /* CardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0EFA1C1E963A2800A11F8A /* CardStackViewController.swift */; };
@@ -29,8 +31,6 @@
 		CB87C9171E98390C000C1CC4 /* WeatherHistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87C9151E98390C000C1CC4 /* WeatherHistoryViewCell.swift */; };
 		CB87C9181E98390C000C1CC4 /* WeatherHistoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB87C9161E98390C000C1CC4 /* WeatherHistoryViewCell.xib */; };
 		CBA8AA691E90F1BF0097B93D /* WeatherDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA8AA681E90F1BF0097B93D /* WeatherDisplayViewController.swift */; };
-		CBABB0051E98BE75004DD85A /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CBABAFF71E98BE55004DD85A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CBABB0061E98BE83004DD85A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBABAFF71E98BE55004DD85A /* Alamofire.framework */; };
 		CBB093911E97A2F100C4CEE8 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8104811E8FFE9A00CF5232 /* UserSettings.swift */; };
 		CBCAADFE1E8EB487008522B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCAADFD1E8EB487008522B0 /* AppDelegate.swift */; };
 		CBCAAE031E8EB487008522B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCAAE011E8EB487008522B0 /* Main.storyboard */; };
@@ -44,55 +44,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CBABAFF61E98BE55004DD85A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
-		CBABAFF81E98BE55004DD85A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS Tests";
-		};
-		CBABAFFA1E98BE55004DD85A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
-			remoteInfo = "Alamofire macOS";
-		};
-		CBABAFFC1E98BE55004DD85A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
-			remoteInfo = "Alamofire macOS Tests";
-		};
-		CBABAFFE1E98BE55004DD85A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS";
-		};
-		CBABB0001E98BE55004DD85A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS Tests";
-		};
-		CBABB0021E98BE55004DD85A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E4202FE01B667AA100C997FB;
-			remoteInfo = "Alamofire watchOS";
-		};
 		CBCAAE221E8EB7AD008522B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CBCAADF21E8EB487008522B0 /* Project object */;
@@ -103,16 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CBABB0041E98BE70004DD85A /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CBABB0051E98BE75004DD85A /* Alamofire.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CBCAAE291E8EB7AD008522B0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +68,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6972B8EC1F719A473378CB07 /* Pods-CentigradeKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentigradeKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentigradeKit/Pods-CentigradeKit.debug.xcconfig"; sourceTree = "<group>"; };
+		98E5007630F79610162F16B3 /* Pods_CentigradeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentigradeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C0075C680E8BCCDD196981 /* Pods-Centigrade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centigrade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Centigrade/Pods-Centigrade.debug.xcconfig"; sourceTree = "<group>"; };
 		CB0EFA181E963A1900A11F8A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CB0EFA191E963A1900A11F8A /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		CB0EFA1C1E963A2800A11F8A /* CardStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStackViewController.swift; sourceTree = "<group>"; };
@@ -152,7 +96,6 @@
 		CB87C9151E98390C000C1CC4 /* WeatherHistoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewCell.swift; sourceTree = "<group>"; };
 		CB87C9161E98390C000C1CC4 /* WeatherHistoryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherHistoryViewCell.xib; sourceTree = "<group>"; };
 		CBA8AA681E90F1BF0097B93D /* WeatherDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDisplayViewController.swift; sourceTree = "<group>"; };
-		CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		CBABB0071E98BF5A004DD85A /* et-EE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "et-EE"; path = "et-EE.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		CBABB0081E98BF5B004DD85A /* et-EE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "et-EE"; path = "et-EE.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CBCAADFA1E8EB487008522B0 /* Centigrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Centigrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +109,9 @@
 		CBCAAE201E8EB7AD008522B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBCAAE2C1E8EB7EF008522B0 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CBCAAE4C1E8EC5F3008522B0 /* WeatherDataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataPoint.swift; sourceTree = "<group>"; };
+		E21FA98E4EE43D2874D055EE /* Pods-Centigrade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centigrade.release.xcconfig"; path = "Pods/Target Support Files/Pods-Centigrade/Pods-Centigrade.release.xcconfig"; sourceTree = "<group>"; };
+		F4687698F2A5D9F206A12449 /* Pods_Centigrade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Centigrade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE296BB026D44CE42ABCC2DB /* Pods-CentigradeKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentigradeKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CentigradeKit/Pods-CentigradeKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBCAAE241E8EB7AD008522B0 /* CentigradeKit.framework in Frameworks */,
+				1A5D8C7FD0A4C4375D864B41 /* Pods_Centigrade.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,13 +128,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBABB0061E98BE83004DD85A /* Alamofire.framework in Frameworks */,
+				203FB75FD50DF7B40439689D /* Pods_CentigradeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1207B9A165F514D6E1DEBB6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6972B8EC1F719A473378CB07 /* Pods-CentigradeKit.debug.xcconfig */,
+				FE296BB026D44CE42ABCC2DB /* Pods-CentigradeKit.release.xcconfig */,
+				C8C0075C680E8BCCDD196981 /* Pods-Centigrade.debug.xcconfig */,
+				E21FA98E4EE43D2874D055EE /* Pods-Centigrade.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7D9BD9B2A4BFC07615D6950A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98E5007630F79610162F16B3 /* Pods_CentigradeKit.framework */,
+				F4687698F2A5D9F206A12449 /* Pods_Centigrade.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB0EFA0F1E9639F200A11F8A /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,28 +211,15 @@
 			path = WeatherDisplayView;
 			sourceTree = "<group>";
 		};
-		CBABAFEC1E98BE54004DD85A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CBABAFF71E98BE55004DD85A /* Alamofire.framework */,
-				CBABAFF91E98BE55004DD85A /* Alamofire iOS Tests.xctest */,
-				CBABAFFB1E98BE55004DD85A /* Alamofire.framework */,
-				CBABAFFD1E98BE55004DD85A /* Alamofire macOS Tests.xctest */,
-				CBABAFFF1E98BE55004DD85A /* Alamofire.framework */,
-				CBABB0011E98BE55004DD85A /* Alamofire tvOS Tests.xctest */,
-				CBABB0031E98BE55004DD85A /* Alamofire.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CBCAADF11E8EB487008522B0 = {
 			isa = PBXGroup;
 			children = (
-				CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */,
 				CBCAAE121E8EB4C4008522B0 /* Classes */,
 				CBCAADFC1E8EB487008522B0 /* Centigrade */,
 				CBCAAE1E1E8EB7AD008522B0 /* CentigradeKit */,
 				CBCAADFB1E8EB487008522B0 /* Products */,
+				1207B9A165F514D6E1DEBB6B /* Pods */,
+				7D9BD9B2A4BFC07615D6950A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -382,11 +336,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBCAAE0F1E8EB487008522B0 /* Build configuration list for PBXNativeTarget "Centigrade" */;
 			buildPhases = (
+				423DBC54E7A73369326456A5 /* [CP] Check Pods Manifest.lock */,
 				CBCAADF61E8EB487008522B0 /* Sources */,
 				CBCAADF71E8EB487008522B0 /* Frameworks */,
 				CBCAADF81E8EB487008522B0 /* Resources */,
 				CBCAAE291E8EB7AD008522B0 /* Embed Frameworks */,
-				CBABB0041E98BE70004DD85A /* CopyFiles */,
+				F7DAF1823206F3C8F3B99B9F /* [CP] Embed Pods Frameworks */,
+				962471726273FD679D39FF6D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -402,10 +358,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBCAAE261E8EB7AD008522B0 /* Build configuration list for PBXNativeTarget "CentigradeKit" */;
 			buildPhases = (
+				F8C99535D7197989B9420EDA /* [CP] Check Pods Manifest.lock */,
 				CBCAAE181E8EB7AD008522B0 /* Sources */,
 				CBCAAE191E8EB7AD008522B0 /* Frameworks */,
 				CBCAAE1A1E8EB7AD008522B0 /* Headers */,
 				CBCAAE1B1E8EB7AD008522B0 /* Resources */,
+				63D7AB298A4E9F1ADB5F71EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -452,12 +410,6 @@
 			mainGroup = CBCAADF11E8EB487008522B0;
 			productRefGroup = CBCAADFB1E8EB487008522B0 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CBABAFEC1E98BE54004DD85A /* Products */;
-					ProjectRef = CBABAFEB1E98BE54004DD85A /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CBCAADF91E8EB487008522B0 /* Centigrade */,
@@ -465,58 +417,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CBABAFF71E98BE55004DD85A /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = CBABAFF61E98BE55004DD85A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBABAFF91E98BE55004DD85A /* Alamofire iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire iOS Tests.xctest";
-			remoteRef = CBABAFF81E98BE55004DD85A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBABAFFB1E98BE55004DD85A /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = CBABAFFA1E98BE55004DD85A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBABAFFD1E98BE55004DD85A /* Alamofire macOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire macOS Tests.xctest";
-			remoteRef = CBABAFFC1E98BE55004DD85A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBABAFFF1E98BE55004DD85A /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = CBABAFFE1E98BE55004DD85A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBABB0011E98BE55004DD85A /* Alamofire tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire tvOS Tests.xctest";
-			remoteRef = CBABB0001E98BE55004DD85A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBABB0031E98BE55004DD85A /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = CBABB0021E98BE55004DD85A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CBCAADF81E8EB487008522B0 /* Resources */ = {
@@ -544,6 +444,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		423DBC54E7A73369326456A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		63D7AB298A4E9F1ADB5F71EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CentigradeKit/Pods-CentigradeKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		962471726273FD679D39FF6D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Centigrade/Pods-Centigrade-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7DAF1823206F3C8F3B99B9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Centigrade/Pods-Centigrade-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8C99535D7197989B9420EDA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CBCAADF61E8EB487008522B0 /* Sources */ = {
@@ -727,6 +705,7 @@
 		};
 		CBCAAE101E8EB487008522B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8C0075C680E8BCCDD196981 /* Pods-Centigrade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 46T8TAS8XK;
@@ -743,6 +722,7 @@
 		};
 		CBCAAE111E8EB487008522B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E21FA98E4EE43D2874D055EE /* Pods-Centigrade.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 46T8TAS8XK;
@@ -759,6 +739,7 @@
 		};
 		CBCAAE271E8EB7AD008522B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6972B8EC1F719A473378CB07 /* Pods-CentigradeKit.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -786,6 +767,7 @@
 		};
 		CBCAAE281E8EB7AD008522B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE296BB026D44CE42ABCC2DB /* Pods-CentigradeKit.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;

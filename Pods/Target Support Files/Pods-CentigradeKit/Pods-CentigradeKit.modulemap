@@ -1,0 +1,6 @@
+framework module Pods_CentigradeKit {
+  umbrella header "Pods-CentigradeKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
