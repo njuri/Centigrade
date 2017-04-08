@@ -34,7 +34,6 @@ final class WeekForecastViewController: UIViewController {
     // Do any additional setup after loading the view.
     historyTableView.register(UINib(nibName: WeekForecastViewCell.classString(), bundle:nil), forCellReuseIdentifier: WeekForecastViewCell.classString())
     NotificationCenter.default.addObserver(self, selector: #selector(locationDidUpdate), name: CentigradeNotification.locationDidChange.notification, object: nil)
-    //historyTableView.tableFooterView = UIView()
   }
   
   override func viewWillAppear(_ animated: Bool) {

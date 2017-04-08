@@ -24,3 +24,5 @@
 "WEATHER_HISTORY_LABEL" = "Ilma ajalugu";
 "NO_HISTORY_LABEL" = "Ajalugu on tühi";
 "ITS_TIME_TO_CHECK_THE_WEATHER" = "Kontrolli ilma!";
+"TAP_TO_GET_LOCATION" = "Vajuta uuendamiseks";
+"ADD_BUTTON" = "Lisa";

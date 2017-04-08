@@ -27,6 +27,10 @@ public final class CentigradeLocationManager : NSObject {
     return CentigradeLocationManager.locationWhenInUseStatus == .authorized
   }
   
+  public var notDetermined : Bool{
+    return CentigradeLocationManager.locationWhenInUseStatus == .notDetermined
+  }
+  
   private let geocoder = CLGeocoder()
   private let clLocationManger : CLLocationManager = {
     let manager = CLLocationManager()

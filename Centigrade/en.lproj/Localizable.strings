@@ -24,3 +24,5 @@
 "WEATHER_HISTORY_LABEL" = "Weather history";
 "NO_HISTORY_LABEL" = "No recent weather history.";
 "ITS_TIME_TO_CHECK_THE_WEATHER" = "It's time to check the weather!";
+"TAP_TO_GET_LOCATION" = "Tap to get location";
+"ADD_BUTTON" = "Add";

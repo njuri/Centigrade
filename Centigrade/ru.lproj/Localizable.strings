@@ -24,3 +24,5 @@
 "WEATHER_HISTORY_LABEL" = "История измерений погоды";
 "NO_HISTORY_LABEL" = "Нет недавних измерений.";
 "ITS_TIME_TO_CHECK_THE_WEATHER" = "Пора проверить погоду!";
+"TAP_TO_GET_LOCATION" = "Обновить погоду";
+"ADD_BUTTON" = "Добавить";

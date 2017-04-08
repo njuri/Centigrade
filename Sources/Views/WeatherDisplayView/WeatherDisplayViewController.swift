@@ -67,6 +67,9 @@ final class WeatherDisplayViewController: UIViewController {
 
     if locationManager.isAuthorized{
       locationManager.requestCurrentLocation()
+    }else if locationManager.notDetermined{
+      updatePlace(with: nil)
+      loadingIndicator.stopAnimating()
     }else{
       locationManager.requestPermission()
     }
@@ -88,7 +91,11 @@ final class WeatherDisplayViewController: UIViewController {
   }
   
   @IBAction func locationPressed(_ sender: Any){
-    AppDelegate.openSettingsApp()
+    if locationManager.notDetermined{
+      locationManager.requestPermission()
+    }else{
+      AppDelegate.openSettingsApp()
+    }
   }
   
   func sendWeatherRequest(with coordinate : CLLocationCoordinate2D){
@@ -122,7 +129,7 @@ final class WeatherDisplayViewController: UIViewController {
       placeLabel.text = name
       locationButton.isEnabled = false
     }else{
-      placeLabel.text = "Tap to enable location"
+      placeLabel.text = NSLocalizedString("TAP_TO_GET_LOCATION", comment: "Tap to get location")
       locationButton.isEnabled = true
     }
     placeLabel.sizeToFit()

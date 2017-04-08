@@ -50,6 +50,7 @@ final class ProfileViewController : UIViewController {
     editProfileButton.setTitle(NSLocalizedString("EDIT_PROFILE_BUTTON", comment: "Edit Profile"), for: .normal)
     automaticLabel.text = NSLocalizedString("AUTOMATIC_LABEL", comment: "Automatic")
     unitsLabel.text = NSLocalizedString("UNITS_LABEL", comment: "Units")
+    addButton.setTitle(NSLocalizedString("ADD_BUTTON", comment: "Add"), for: .normal)
     profilePlaceholderImageView.image = profilePlaceholderImageView.image?.withRenderingMode(.alwaysTemplate)
     profilePlaceholderImageView.tintColor = .gray
     nameField.placeholder = NSLocalizedString("YOUR_NAME_LABEL", comment: "Your Name")
@@ -69,10 +70,6 @@ final class ProfileViewController : UIViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     profileImageView.layer.cornerRadius = profileImageView.frame.height/2
-  }
-  
-  override var shouldAutorotate: Bool{
-    return false
   }
   
   @IBAction func editProfilePressed(_ sender: Any) {
