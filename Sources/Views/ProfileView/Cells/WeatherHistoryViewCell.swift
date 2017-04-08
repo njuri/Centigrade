@@ -11,7 +11,7 @@ import CentigradeKit
 
 final class WeatherHistoryViewCell: UITableViewCell {
   
-  @IBOutlet weak var placeLabel: UILabel!
+  @IBOutlet weak var placeButton: UIButton!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var temperatureLabel: TemperatureDisplayLabel!
   @IBOutlet weak var iconView: UIImageView!
@@ -25,5 +25,8 @@ final class WeatherHistoryViewCell: UITableViewCell {
     dateLabel.text = UserSettings.weatherHistoryDateFormater.string(from: dataPoint.date)
     temperatureLabel.set(to: dataPoint.temperature)
     iconView.image = dataPoint.summary.icon
+    placeButton.setTitle("\(dataPoint.location.latitude), \(dataPoint.location.longitude)", for: .normal)
   }
+  
+  
 }

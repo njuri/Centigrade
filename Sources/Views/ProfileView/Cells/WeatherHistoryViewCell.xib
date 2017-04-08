@@ -46,12 +46,10 @@
                             <constraint firstAttribute="width" constant="8" id="twg-Dg-YXF"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6h-fr-2PC">
-                        <rect key="frame" x="27" y="30" width="5" height="12"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ro-Le-BJz">
+                        <rect key="frame" x="27" y="24" width="30" height="24"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="24F-FV-Voj" secondAttribute="trailing" id="Be4-8n-BSX"/>
@@ -59,10 +57,10 @@
                     <constraint firstItem="jCu-m5-T6T" firstAttribute="centerY" secondItem="24F-FV-Voj" secondAttribute="centerY" id="MN1-rm-gOF"/>
                     <constraint firstItem="24F-FV-Voj" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="11/20" id="NDn-29-Unn"/>
                     <constraint firstItem="24F-FV-Voj" firstAttribute="leading" secondItem="jCu-m5-T6T" secondAttribute="trailing" constant="8" id="ONv-5T-pjF"/>
+                    <constraint firstItem="9ro-Le-BJz" firstAttribute="centerY" secondItem="vHu-Hu-Seq" secondAttribute="centerY" id="Qva-v9-EcV"/>
+                    <constraint firstItem="9ro-Le-BJz" firstAttribute="leading" secondItem="vHu-Hu-Seq" secondAttribute="trailing" constant="4" id="VCg-PG-Z1T"/>
                     <constraint firstItem="vHu-Hu-Seq" firstAttribute="top" secondItem="yq6-nI-VdU" secondAttribute="bottom" constant="4" id="XfA-Ww-PPW"/>
                     <constraint firstItem="yq6-nI-VdU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-8" id="e0Y-fi-0Ym"/>
-                    <constraint firstItem="h6h-fr-2PC" firstAttribute="centerY" secondItem="vHu-Hu-Seq" secondAttribute="centerY" id="iAE-do-sPd"/>
-                    <constraint firstItem="h6h-fr-2PC" firstAttribute="leading" secondItem="vHu-Hu-Seq" secondAttribute="trailing" constant="4" id="puL-t3-mkr"/>
                     <constraint firstItem="vHu-Hu-Seq" firstAttribute="leading" secondItem="yq6-nI-VdU" secondAttribute="leading" id="rib-jv-XzO"/>
                     <constraint firstItem="24F-FV-Voj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="u2s-Bs-7MH"/>
                 </constraints>
@@ -70,7 +68,7 @@
             <connections>
                 <outlet property="dateLabel" destination="yq6-nI-VdU" id="ySx-Gw-bsb"/>
                 <outlet property="iconView" destination="24F-FV-Voj" id="wBb-n1-MFD"/>
-                <outlet property="placeLabel" destination="h6h-fr-2PC" id="7f3-Lp-tqq"/>
+                <outlet property="placeButton" destination="9ro-Le-BJz" id="17v-2I-7aG"/>
                 <outlet property="temperatureLabel" destination="jCu-m5-T6T" id="fXv-GZ-XSH"/>
             </connections>
             <point key="canvasLocation" x="-123" y="26"/>

@@ -39,6 +39,7 @@ final class WeekForecastViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    loadCurrentWeather()
   }
   
   func locationDidUpdate(){

@@ -12,11 +12,10 @@ import CoreLocation
 
 enum CentigradeNotification : String{
   case locationDidChange
+  case unitsDidChange
   
   var notification : Notification.Name{
-    switch self{
-    case .locationDidChange: return Notification.Name(self.rawValue)
-    }
+    return Notification.Name(rawValue)
   }
 }
 
@@ -62,8 +61,14 @@ struct UserSettings{
       default: return nil
       }
     }set{
+      lastWeatherUpdate = nil
+      lastForecastUpdate = nil
       UserDefaults.standard.set(newValue?.symbol, forKey: UserDefaultsKey.temperatureUnit.rawValue)
     }
+  }
+  
+  static var currentTemperatureUnit : UnitTemperature{
+    return customTemperatureUnit ?? defaultTemperatureUnit
   }
   
   static var currentLocation : CLLocationCoordinate2D?{
@@ -83,10 +88,6 @@ struct UserSettings{
     return Date().timeIntervalSince(lastForecastUpdate) >= forecastUpdateInterval
   }
   
-  static var currentTemperatureUnit : UnitTemperature{
-    return customTemperatureUnit ?? defaultTemperatureUnit
-  }
-  
   static func localizedString(from temperature : Measurement<UnitTemperature>)->String{
     let converted = temperature.converted(to: currentTemperatureUnit)
     return String(Int(converted.value.rounded(.toNearestOrEven)))+"°"
@@ -101,7 +102,7 @@ struct UserSettings{
   }
   
   
-  private static var lastWeatherUpdate : Date?{
+  static var lastWeatherUpdate : Date?{
     get{
       return UserDefaults.standard.object(forKey: UserDefaultsKey.lastWeatherUpdate.rawValue) as? Date
     }set{

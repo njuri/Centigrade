@@ -38,6 +38,7 @@ final class ProfileViewController : UIViewController {
   var isEditingProfile = false
   var user : UserObject = CoreDataFactory.user
   var weatherHistoryPoints : [WeatherDataPoint] = []
+  var locationTitles : [String?] = []
   let geocoder = CLGeocoder()
   
   override func viewDidLoad() {
@@ -114,6 +115,9 @@ final class ProfileViewController : UIViewController {
   func loadHistory(){
     CoreDataFactory.fetchWeatherHistory { (points) in
       self.weatherHistoryPoints = points
+      for _ in 0..<points.count{
+        self.locationTitles.append(nil)
+      }
       DispatchQueue.main.async {
         self.profileTableView.reloadSections([1], with: .automatic)
       }
@@ -191,6 +195,9 @@ final class ProfileViewController : UIViewController {
     default: print("")
     }
     profileTableView.reloadSections([0], with: .none)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { 
+      self.profileTableView.reloadSections([1], with: .none)
+    }
   }
   
   @IBAction func automaticDidSwitch(_ sender: Any) {
@@ -202,6 +209,10 @@ final class ProfileViewController : UIViewController {
     updateAutomaticCell()
     updateSegmentCell()
     profileTableView.reloadSections([0], with: .none)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      self.profileTableView.reloadSections([1], with: .none)
+    }
+
   }
   
   @IBAction func chevronPressed(_ sender: Any) {
@@ -249,15 +260,6 @@ extension ProfileViewController : UITableViewDataSource{
       let cell = tableView.dequeueReusableCell(withIdentifier: WeatherHistoryViewCell.classString()) as! WeatherHistoryViewCell
       let point = weatherHistoryPoints[indexPath.row]
       cell.set(to: point)
-      geocoder.reverseGeocodeLocation(CLLocation(latitude: point.location.latitude, longitude: point.location.longitude)) { (placemarks, error) in
-        DispatchQueue.main.async {
-        if let firstPlacemark = placemarks?.first, error == nil {
-          cell.placeLabel.text = firstPlacemark.locality ?? firstPlacemark.country
-        }else{
-          cell.placeLabel.text = "-"
-        }
-        }
-      }
       return cell
     }
   }

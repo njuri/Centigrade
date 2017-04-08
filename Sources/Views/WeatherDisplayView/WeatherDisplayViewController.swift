@@ -15,6 +15,7 @@ final class WeatherDisplayViewController: UIViewController {
   @IBOutlet weak var userProfileImageView: UIImageView!
   @IBOutlet weak var degreeLabel: TemperatureDisplayLabel!
   @IBOutlet weak var placeLabel: UILabel!
+  @IBOutlet weak var locationButton: UIButton!
   @IBOutlet weak var locationBackgroundView: UIView!
   @IBOutlet weak var locationIcon: UIImageView!
   @IBOutlet weak var currentWeatherIcon: UIImageView!
@@ -30,6 +31,7 @@ final class WeatherDisplayViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
     locationManager.delegate = self
     setupLocationView()
+    locationButton.isEnabled = false
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +87,10 @@ final class WeatherDisplayViewController: UIViewController {
     cardStackController.stack(viewController: profileCardController)
   }
   
+  @IBAction func locationPressed(_ sender: Any){
+    AppDelegate.openSettingsApp()
+  }
+  
   func sendWeatherRequest(with coordinate : CLLocationCoordinate2D){
     APIClient.requestCurrentForecast(for: coordinate) { (dataPoint, error) in
      self.loadingIndicator.stopAnimating()
@@ -114,8 +120,10 @@ final class WeatherDisplayViewController: UIViewController {
   func updatePlace(with name : String?){
     if let name = name{
       placeLabel.text = name
+      locationButton.isEnabled = false
     }else{
-      placeLabel.text = "–"
+      placeLabel.text = "Tap to enable location"
+      locationButton.isEnabled = true
     }
     placeLabel.sizeToFit()
   }
@@ -125,6 +133,7 @@ final class WeatherDisplayViewController: UIViewController {
 extension WeatherDisplayViewController : LocationManagerDelegate{
   func didFailToReceiveLocation() {
     updatePlace(with: nil)
+    self.loadingIndicator.stopAnimating()
   }
   
   func didUpdateLocationAuthorizationStatus() {
