@@ -386,7 +386,6 @@
 				TargetAttributes = {
 					CBCAADF91E8EB487008522B0 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 46T8TAS8XK;
 						ProvisioningStyle = Automatic;
 					};
 					CBCAAE1C1E8EB7AD008522B0 = {
@@ -708,7 +707,7 @@
 			baseConfigurationReference = C8C0075C680E8BCCDD196981 /* Pods-Centigrade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 46T8TAS8XK;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Centigrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -725,7 +724,7 @@
 			baseConfigurationReference = E21FA98E4EE43D2874D055EE /* Pods-Centigrade.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 46T8TAS8XK;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Centigrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
