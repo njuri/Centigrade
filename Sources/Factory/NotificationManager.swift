@@ -38,8 +38,9 @@ struct NotificationManager {
     let content = UNMutableNotificationContent()
     content.body = NSLocalizedString("ITS_TIME_TO_CHECK_THE_WEATHER", comment: "It's time to check the weather!")
     content.sound = UNNotificationSound.default()
-    
-    let triggerDate = Date(timeIntervalSince1970: 12*60*60)
+  
+    let hoursOffset = TimeInterval(TimeZone.current.secondsFromGMT())/3600
+    let triggerDate = Date(timeIntervalSince1970: (12-hoursOffset)*60*60+60*2)
     let triggerComponents = Calendar.current.dateComponents([.hour,.minute,.second], from: triggerDate)
     
     let trigger = UNCalendarNotificationTrigger(dateMatching: triggerComponents, repeats: true)
