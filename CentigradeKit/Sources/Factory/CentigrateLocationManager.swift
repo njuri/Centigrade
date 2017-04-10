@@ -61,6 +61,13 @@ public final class CentigradeLocationManager : NSObject {
     clLocationManger.requestLocation()
   }
 
+  
+  /// Returns either city (or city area) or country name based on given location.
+  ///
+  /// - Parameters:
+  ///   - location: Geographic location of requested place.
+  ///   - completion: If geocoding operation succeeds then returns either city or country name otherwise returns `nil`.
+  ///   - locality: City or country name. Optional.
   public func placemarkLocality(from location : CLLocation, completion : @escaping (_ locality : String?) ->()){
     geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
       guard let firstPlacemark = placemarks?.first, error == nil else {

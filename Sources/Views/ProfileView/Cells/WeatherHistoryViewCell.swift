@@ -25,7 +25,8 @@ final class WeatherHistoryViewCell: UITableViewCell {
     dateLabel.text = UserSettings.weatherHistoryDateFormater.string(from: dataPoint.date)
     temperatureLabel.set(to: dataPoint.temperature)
     iconView.image = dataPoint.summary.icon
-    placeButton.setTitle("\(dataPoint.location.latitude), \(dataPoint.location.longitude)", for: .normal)
+    let degreeString = String(format: "%.6f, %.6f", dataPoint.location.latitude, dataPoint.location.longitude)
+    placeButton.setTitle(degreeString, for: .normal)
   }
   
   

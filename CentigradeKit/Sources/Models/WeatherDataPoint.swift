@@ -9,14 +9,27 @@
 import Foundation
 import CoreLocation
 
+
+/// Represents the weather data at specific date in specific location.
 public struct WeatherDataPoint{
+  
+  /// Temperature at specific date.
   public let temperature : Measurement<UnitTemperature>
+  /// A kind of the weather in order to show proper icon (sun - for sunny weather, snowflake - for snow etc.).
   public let summary : WeatherSummary
+  /// String that will be displayed to the user as a description of the weather.
   public let readableSummary : String
+  
+  /// Specific location representing current temperature
   public let location : CLLocationCoordinate2D
+  
+  /// Specific point in time representing current temperature
   public let date : Date
+  
+  /// Temperature interval that contains approximate maximal and minimal temperatures at specific date.
   public let temperatureInterval : TemperatureInterval?
   
+  /// This method is used to initialize a data point from the Core Data store.
   public init(apparentTemperatureValue : Double, temperatureValue : Double, summary : WeatherSummary, latitude : Double, longitude : Double, date : Date, readableSummary : String, unit : UnitTemperature){
     temperature = Measurement(value: temperatureValue, unit: unit)
     location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -26,13 +39,13 @@ public struct WeatherDataPoint{
     temperatureInterval = nil
   }
   
+  
   public init?(from weatherDictionary : [String : AnyObject], location : CLLocationCoordinate2D){
     guard let iconSummary = weatherDictionary["icon"] as? String, let summary = WeatherSummary(rawValue: iconSummary) else { return nil }
     guard let readableSummary = weatherDictionary["summary"] as? String else { return nil }
     guard let time =
       weatherDictionary["time"] as? TimeInterval else { return nil }
 
-    //self.apparentTemperature = Measurement(value: apparentTemperature, unit: UnitTemperature.fahrenheit)
     self.summary = summary
     self.readableSummary = readableSummary
     self.location = location

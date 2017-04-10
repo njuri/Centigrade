@@ -49,7 +49,7 @@ final class WeekForecastViewController: UIViewController {
     guard let currentLocation = currentLocation  else { return }
     guard UserSettings.canUpdateForecast else { return }
     print("Starting forecast update")
-    
+    // Prevent multiple calls of weekly forecast before one has completed
     UserSettings.didUpdateForecast()
     APIClient.requestWeeklyForecast(for: currentLocation) { (dataPoints, error) in
       guard error == nil else {

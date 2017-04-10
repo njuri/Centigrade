@@ -8,7 +8,13 @@
 
 import Foundation
 
+
+/// Temperature interval that represents minimal and maximal temperature for a specific weather forecast.
 public struct TemperatureInterval{
+  
+  /// Minmal temperature that is expected at specific date.
   public let minTemperature : Measurement<UnitTemperature>
+  
+  /// Maximal temperature that is expected at specific date.
   public let maxTemperature : Measurement<UnitTemperature>
 }

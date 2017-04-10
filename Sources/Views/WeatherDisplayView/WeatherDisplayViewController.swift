@@ -92,8 +92,10 @@ final class WeatherDisplayViewController: UIViewController {
   
   @IBAction func locationPressed(_ sender: Any){
     if locationManager.notDetermined{
+      // If authorization status is not determined - show system alert.
       locationManager.requestPermission()
     }else{
+      // If authorization status is determined, but denied - open settings app.
       AppDelegate.openSettingsApp()
     }
   }
@@ -107,6 +109,8 @@ final class WeatherDisplayViewController: UIViewController {
       }
       UserSettings.didUpdateWeather()
       self.updateLabels(with: dataPoint)
+      
+      // Save current weather check to the Core Data store.
       if let dataPoint = dataPoint{
         _ = CoreDataFactory.saveDataPoint(dataPoint: dataPoint)
       }

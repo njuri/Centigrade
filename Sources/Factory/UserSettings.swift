@@ -77,7 +77,6 @@ struct UserSettings{
     }
   }
   
-
   static var canUpdateWeather : Bool{
     guard let lastWeatherUpdate = lastWeatherUpdate else { return true }
     return Date().timeIntervalSince(lastWeatherUpdate) >= weatherUpdateInterval
